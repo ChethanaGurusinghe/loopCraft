@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>LoopCraft</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="brand">
+                <img src="assets/logo.png" class="logo" />
+                <span class="brand-name">LoopCraft</span>
+            </div>
+
+            <nav class="topnav">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+            </nav>
+
+            <div class="actions">
+                <button id="themeToggle" class="icon-btn">🌙</button>
+                <!-- <button id="menuBtn" class="mobile-menu">☰</button> -->
+            </div>
+        </header>
+
+        <main class="container">
+            <section class="hero">
+                <h2 id="heroTitle">Explore Tech Articles</h2>
+                <p id="heroDesc">Learn programming, databases, and modern
+                    technologies with LoopCraft.</p>
+            </section>
+
+            <section class="bottom-image">
+                <img src="assets/hero.png" alt="Hero Image" />
+            </section>
+
+            <section class="cards">
+
+                <div class="card blog-card">
+
+                    <div class="card-image">
+                        <img src="assets/sql-card.png" alt="SQL Series">
+                    </div>
+
+                    <div class="card-content">
+                        <h3><center>SQL Series</center></h3>
+                        <p id="sqlDesc"><center><i>Learn SQL from basics to
+                                    advanced.</i></center></p>
+
+                        <button class="card-btn"
+                            onclick="location.href='blog.html'">
+                            See More
+                        </button>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <footer class="footer">
+
+                <div class="footer-box">
+
+                    <p class="follow-text">Don't forget to follow me on:</p>
+
+                    <div class="social-links">
+                        <a href="https://github.com/ChethanaGurusinghe"
+                            target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+
+                        <a href="https://linkedin.com/in/YOUR_USERNAME"
+                            target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+
+                    <p class="copyright">© 2026 LoopCraft</p>
+
+                </div>
+
+            </footer>
+
+            <script src="data/posts.js"></script>
+            <script src="js/app.js"></script>
+        </body>
+    </html>

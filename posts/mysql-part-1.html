@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>MySQL Part 1</title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+
+    <body>
+
+        <header class="topbar">
+            <div class="brand">
+                <img src="../assets/logo.png" class="logo" />
+                <span class="brand-name">LoopCraft</span>
+            </div>
+        </header>
+
+        <main class="container">
+
+            <!-- SINHALA CONTENT -->
+            <div class="post-content lang-si">
+                <h1 id="title"><u>MySQL කොටස 1</u></h1>
+                <p>
+                    මේ blog එක ලියන එකෙන් මගේ purpose එක වෙන්නේ MySql use කරලා
+                    database එකක් හදාගන්නේ කොහොමද කියන එක ගැන share කරන එක.
+
+                    ඉතින් ඔයා programming side එකට enter වෙලා mysql ගැන දැනගන්න
+                    කැමති කෙනෙක් නම් ඔයාට මේ article එක ගොඩක් වැදගත් වේවි.</p>
+
+                <hr>
+
+                <p>
+                    ඉගෙන ගන්න කලින් අපි බලමුකො MySql වල වැදගත්කම මොනවගේද කියලා…
+                </p>
+
+                <center><img height="450px" width="900px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770829531/Ss1_wro3d2.jpg"
+                        alt></center>
+
+                <p>
+                    මේ report එක බැලුවම ඔයාට තේරෙනවා ඇති Mysql මොනතරම් වැදගත්ද
+                    කියලා.මේ වෙනකොට database හදන්න learners ලා වැඩිම ප්‍රමාණයක්
+                    use කරන්නේ Mysql. Learners ලා විතරක් නෙවෙයි professional
+                    developers ලා use කරන ඒවා අතරිනුත් උඩින්ම තියන data
+                    management system එකක් තමයි mysql කියන්නෙ.
+                </p>
+
+                <p id="header1"><b>Database එකක් කියන්නේ මොකක්ද?</b></p>
+
+                <p>data set එකක් මොකක් හරි මාධ්‍යක් use කරලා එක තැනක store කරලා
+                    තියනව නම් ඒක අපිට database එකක් කියලා කියන්න පුළුවන්.තවත්
+                    විදියකින් කිව්වොත් organize කරපු data set එකක්.
+                    අපි ඒ store කරන data ගිහින් hard disk එකේ permanently store
+                    වෙනවා.</p>
+
+                <center><img height="270px" width="700px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770829250/database_vrvixa.png"
+                        alt></center>
+
+                <p id="header1"><b>Database එකක් use කරන්නේ ඇයි?</b></p>
+
+                <p>කලිනුත් කිව්වා වගේ database එකක් use කරන්නේ data store
+                    කරන්න.ඒ වගේමයි මේ data store කලාට පස්සේ අපිට ඕන වෙලාවට නැවත
+                    ලබා ගන්නත් පුළුවන්.
+                    Example එකක් විදියට මෙහෙම හිතන්නකො.අපි හැමෝටම වගේ තියනවනේ Fb
+                    account එකක්. අපි account එකට log වෙනකොට username, password
+                    හරියට දැම්මොත් තමයි log වෙන්න පුළුවන්.එකේදි වෙන්නේ අපේ
+                    username,password database එකක store කරලා තියාගෙන අපි ආයේ
+                    log වෙනකොට enter කරන username,password එක්ක කලින් store කරපු
+                    username,password match වෙනවද බලන එක.
+                    Data insert කරන්න,නැවත ලබා ගන්න විතරක් නෙවෙයි, ඒ data update
+                    කරන්න,delete කරන්න වගේ දේවලුත් කරන්න පුළුවන්.</p>
+
+                <p id="header1"><b>Database එකක data store වෙන විදිය</b></p>
+
+                <p>
+                    Database එකක data store වෙන්නේ table විදියට.ඒ නිසා අපිට ඒ
+                    data use කරන්න ලේසී. data store වෙනකොට ඒ අදාල table එකේ
+                    tuples විදියට තමයි data store වෙන්නේ.
+                    ඒ වගේමයි ඒ හැම table එකකටම unique name එකක් තියනවා.ඒ name එක
+                    එන්නේ කොහොමද කියලා ඉස්සරහට බලමු.
+                </p>
+
+                <center><img height="350px" width="700px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770830008/Ss2_tuhumf.jpg"
+                        alt></center>
+
+                <p id="header1"><b>ER Diagrams</b></p>
+
+                <p>
+                    දැන් අපි කතා කරන්නේ ER Diagram ගැන.මොකක්ද මේ ER Diagrm
+                    කියන්නේ?
+                    ER Diagram එකක් කොහොමද database එකකට සම්බන්ධ වෙන්නේ?
+                    මේ දෙක බලන්න කලින් ER diagram එකකට Example එකක් බලලා ඉමු.
+                </p>
+
+                <center><img height="300px" width="600px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770830298/ER_ugxp0v.png"
+                        alt></center>
+
+                <p id="header1"><b>ER Diagram එකක් කියන්නේ මොකක්ද?</b></p>
+
+                <p>
+                    ER Diagram එකක් Entity Relationship Diagram එකක් කියන
+                    එක.දැන් අපි බලමු database එකයි ER එකයි අතරෙ තියන සම්බන්ධය
+                    මොකක්ද කියලා.
+                </p>
+
+                <p>
+                    Example එකක් විදියට මෙහෙම හිතන්න.
+                    අපි කලින් කතා කරපු database එක ගෙදරක් කියලා හිතුවොත් ඒ ගෙදර
+                    plan එක තමයි ER Diagram එක.ඒ කියන්නේ database එකක් හදන්න
+                    කලින් අපි ඒ database එක මොනවගේද කියලා plan කරගන්න ඕනි.
+                </p>
+
+                <p>
+                    ER Diagram කියන්නේ Entity Relationship Diagram කියන එකනෙ. නම
+                    කිව්ව ගමන් අපිට තේරෙනවා Entities කියලා දෙයක් තියනවා, ඒවා
+                    අතරෙ තියන relationship එකක් ගැන තමයි කියන්නේ කියලා.ER එකක
+                    පැහැදිලිව අදුරගන්න පුළුවන් දේවල් 3ක් තියනවා.
+                </p>
+
+                <ol>
+                    <li>Entities</li>
+                    <li>Attributes</li>
+                    <li>Relationships</li>
+                </ol>
+
+                <p>ER Diagram එකක කොටසකින් මේ තුන ගැන පොඩි idea එකක්
+                    දෙන්නම්.</p>
+
+                <center><img height="300px" width="600px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770830245/Ss3_ylzty0.jpg"
+                        alt></center>
+
+                <p>ER Diagram එකක් අදිනකොට Entity, attributes, relationships
+                    නිරූපණය කරන symbols තියනවා.</p>
+
+                <div class="image-row">
+
+                    <img
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770830738/Ss5_petily.jpg"
+                        alt="Image 1">
+                    <img
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770830759/Ss6_iewhfd.jpg"
+                        alt="Image 2">
+                    <img
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770830782/Ss7_a3vswx.jpg"
+                        alt="Image 3">
+
+                </div>
+
+                <div class="summary-box">
+                    <h3>📌 Summary</h3>
+                    <p>
+                        අද අපි කතා කලේ,<br>
+                        database එකක් කියන්නේ මොකක්ද?,<br>
+                        ER Diagram එකක් කියන්නේ මොකක්ද?,<br>
+                        සහ ER diagram එකක basic symbols ගැන.
+                    </p>
+                </div>
+
+                <div class="next-box">
+                    <h3>⏭️ Coming Up Next</h3>
+                    <p>
+                        Next Part එකෙන්,<br>
+                        Entities, Relationships, Attributes ගැන වගේම
+                        relationship cardinality & relationship වර්ග,<br>
+                        Attributes වර්ග, Entities වර්ග ගැන කතා කරමු.<br>
+                        <i>Read next > MySQL Part 2</i>
+                    </p>
+
+                    <hr>
+                </div>
+
+                <center><p><h3>Thanks for tuning in. Until next time, stay
+                            tech-savvy!</h3></p></center>
+            </div>
+
+            <div class="comment-section">
+
+                <h3>💬 Comments</h3>
+                <input type="text" id="name" placeholder="Your Name">
+                <textarea id="comment"
+                    placeholder="Write your comment..."></textarea>
+                <button onclick="addComment()">Post Comment</button>
+                <div id="commentList"></div>
+
+            </div>
+
+            <!-- ENGLISH CONTENT -->
+            <div class="post-content lang-en">
+                <h1>MySQL Part 1</h1>
+                <p>
+                    SQL is used to manage and manipulate databases.
+                    Here we learn database basics...
+                </p>
+            </div>
+
+        </main>
+
+        <script src="../js/postLang.js"></script>
+        <script src="../js/app.js"></script>
+
+    </body>
+</html>
