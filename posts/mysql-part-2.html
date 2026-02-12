@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>MySQL Part 2</title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+
+    <body>
+
+        <header class="topbar">
+            <div class="brand">
+                <img src="../assets/logo.png" class="logo" />
+                <span class="brand-name">LoopCraft</span>
+            </div>
+        </header>
+
+        <main class="container">
+
+            <a href="../blog.html" class="card-btn back-btn">⬅ View All
+                Blogs</a>
+
+            <!-- SINHALA CONTENT -->
+            <div class="post-content lang-si">
+                <h1><u>MySQL කොටස 2</u></h1>
+
+                <p>
+                    මේ blog එක ලියන එකෙන් මගේ purpose එක වෙන්නේ MySql use කරලා
+                    database එකක් හදාගන්නේ කොහොමද කියන එක ගැන share කරන එක.
+
+                    ඉතින් ඔයා programming side එකට enter වෙලා mySQL ගැන දැනගන්න
+                    කැමති කෙනෙක් නම් ඔයාට මේ article එක ගොඩක් වැදගත් වේවි.
+                </p>
+
+                <div class="previous-box">
+                    <h3>📚 From Previous Blog</h3>
+
+                    <p>
+                        MySQL Part I එකේ ER Diagram එකක් කියන්නේ මොකක්ද?<br>
+                        Entity , Relationship හා Attribute ගැන සරල අදහසක් ගත්තා
+                        මතක ඇති.
+                        MySQL Part I කියෙව්වේ නැත්නම් ඒකත් කියවලම එන්න.<br>
+                        <a href="mysql-part-1.html" class="prev-link">
+                            👉 Read MySQL Part I
+                        </a>
+
+                    </p>
+
+                    <p>
+                        අපි යමු අද Part එකට…<br>
+                        අද Entity , Relationship හා Attribute ගැන deeply කතා
+                        කරනවා.
+                    </p>
+                </div>
+
+                <p id="header1"><b>Entity එකක් කියන්නේ මොකක්ද ? (Strong
+                        Entity)</b></p>
+
+                <p>
+                    Entity එකක් කියන්නේ කවුරුහරි කෙනෙක්, තැනක් , නැත්නම්
+                    මොකක්හරි සිදුවීමක් වෙන්න පුළුවන්.
+                    Entity එකක් rectangle එකක් ඇතුලේ නිරුපණය කරනවා.මේ Entity එකේ
+                    name එක අනිවාර්යයෙන් singular(ඒකවචන) වෙන්න ඕනි. ඒ කියන්නේ
+                    Students කියලා entity එකක් තියෙන්න බෑ.
+                </p>
+
+                <center>
+                    <img height="200px" width="450px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770913441/Ss8_xkcp69.jpg"
+                        alt>
+                </center>
+
+                <p>
+                    ඒ වගේම ER එකේ හැම Entity එකකට අදාළවම database එකේ table එකක්
+                    හැදෙනවා.Entity වල වර්ග තියනවා.Normal විදියට entity එකක් මේ
+                    විදියට තමයි අදින්නේ.මේ වගේ ඒවට අපි කියනවා Strong Entity එකක්
+                    කියලා.Strong වගේම Week entites නුත් තියනවා.
+                </p>
+
+                <p id="header1"><b>Week Entity</b></p>
+
+                <center><img height="200px" width="400px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770913665/Ss9_dmwdow.jpg"
+                        alt></center>
+
+                <p>Week entity එකක් rectangle එකක් ඇතුලේ rectangle එකක් විදියට
+                    තමයි නිරුපණය කරන්නේ.Employee children කියන එක
+                    employee මත depend වෙනවනේ.එහෙම entities වලට week entity කියල
+                    කියනවා.</p>
+
+                <hr>
+                <p>ER එකක තියන 2වෙනි part එක තමයි attributes කියන්නේ….</p>
+
+                <p id="header1"><b>Attribute එකක් කියන්නේ මොකක්ද ?</b></p>
+
+                <p>
+                    ER එකක Entity එකක් විස්තර කරන්න use කරන දේවල් වලට attributes
+                    කියලා කියනවා.Example එකක් විදියට Student කියන entity එක
+                    සැලකුවොත් Student ව විස්තර කරන්න පුළුවන් කොහොමද?<br>
+
+                    අදාල Studentට නමක්,වයසක්,උපන් දිනයක්,address එකක් වගේ දේවල්
+                    තියනවා.මෙන්න මේ දේවල් වලට තමයි attributes කියලා කියන්නේ.
+                    අපිට ඒක මේ විදියට නිරුපණය කරන්න පුලුවන්.
+                </p>
+
+                <center><img height="250px" width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770913955/Ss10_ump5xj.jpg"
+                        alt></center>
+
+                <p>Database එක පැත්තෙන් බැලුවොත් Student කියන table එකේ තියන
+                    columns තමයි ER එකේ attributes වෙන්නේ.</p>
+
+                <p>Attributes වර්ග 4ක් තියනවා.</p>
+
+                <ol>
+                    <li>Simple attributes</li>
+                    <li>Composite attributes</li>
+                    <li>Derived attributes</li>
+                    <li> Multivalued attributes</li>
+                </ol>
+
+                <p id="header1"><b>(01.) Simple Attributes</b></p>
+                <p>ඒ කියන්නේ අපි කලින් කතා කලා වගේ normal attribute එකක්.</p>
+                <center><img height="250px" width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770914286/Ss20_zk3wc9.jpg"
+                        alt></center>
+
+                <p id="header1"><b>(02.) Composite Attributes</b></p>
+                <p>Composite Attribute එකක් කියන්නේ තවත් ගුණාංග සහිත attribute
+                    එකකට…එහෙම කිව්වට නම් තේරෙන්නේ නැති වෙයි.අපි example එකකින්
+                    බලමු.</p>
+
+                <center><img height="250px" width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770914636/Ss21_r92bwc.jpg"
+                        alt></center>
+
+                <p>
+                    Student ට නමක් තියනවා කියන තැනට වෙනකන් දැන් read කරගන්න
+                    පුළුවන් නේ.Name එකකට first name and last name(surname) කියලා
+                    කොටස් දෙකක් තියෙන්න පුළුවන්.ඒකතමයි තවත් ගුණාංග සහිත කියන්නේ.
+                    තේරුනේ නැත්නම් තව example එකක් බලමු.
+                </p>
+
+                <center><img height="250px" width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770914792/Ss23_vjwnov.jpg"
+                        alt></center>
+
+                <p>
+                    සරලවම කිව්වොත් address එක හැදිලා තියෙන්නේ country , city
+                    ,street කියන තුනෙන්.(ඒක ER එකෙන් ER එකට, purpose එක අනුව
+                    වෙනස් වෙන්න පුළුවන්)
+                </p>
+
+                <p id="header1"><b>(03.) Derived Attributes</b></p>
+
+                <p>
+                    මේ attribute වර්ගයේ value එක අපිට වෙනත් attribute එකක් use
+                    කරලා උනත් ගන්න පුළුවන්.
+                    Example එකක් විදියට database එකේ උපන්දිනය(dob) store කරලා
+                    තියනවා නම් ඒ ඇසුරෙන් වයස ගණනය කරගන්න පුළුවන්..මේ වගේ
+                    attributes වලට තමයි derived attributes කියන්නේ</p>
+
+                <center><img height="200px" width="550px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770914967/Ss24_x0bryf.jpg"
+                        alt></center>
+
+                <p id="header1"><b>(04.) Multivalued Attributes</b></p>
+                <p>Multivalued Attributes කියන්නේ බහු අගයන් සහිතයි කියන
+                    එක.Example එකක් විදියට phone number එක.
+                    එක්කෙනෙකුට එක phone number එකකට වඩා තියෙන්න පුළුවන් නිසා ඒක
+                    Multivalued කියලා කියන්න පුළුවන්</p>
+
+                <center><img height="200px" width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770915102/Ss25_qjudzy.jpg"
+                        alt></center>
+
+                <hr>
+
+                <p>ER එකක තියන 3වෙනි part එක තමයි relationship කියන්නේ….</p>
+
+                <p id="header1"><b>ER එකක relationship එකක් කියන්නේ මොකක්ද
+                        ?</b></p>
+
+                <p>relationship එකක් කියන්නේ entities දෙකක් අතරෙ තියන
+                    සම්බන්ධයක්.ඒ කියන්නේ database එකේ නම් table දෙකක් අතරෙ තියන
+                    සම්බන්ධය.
+                    ER Diagram එකක් අදිනකොට relationship එකක් නිරුපණය කරන්නේ මේ
+                    විදියට..</p>
+
+                <center><img height="200px" width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770915334/Ss11_ooaekv.jpg"
+                        alt></center>
+
+                <p>
+                    මේ symbol එක ඇතුලේ දන්නේ verb එකක්.ඒ verb එක entities වලට
+                    match
+                    වෙන්න ඕනි.Relationship එකකුයි entity එකකුයි සම්බන්ධ වෙන්නේ
+                    කොහොමද කියල කියල ඉන්නම්.<br>
+
+                    Entities දෙකක් අතරෙ relationship එකක් තියනවා නම්
+                    අනිවාර්යයෙන්
+                    ඒකට cardinality එකක්(ගණනියතාවයක්) තියෙන්න ඕනි.ඒ cardinality
+                    එක
+                    අනුව relationship වර්ග 3ක් තියනවා.
+                </p>
+
+                <ol>
+                    <li>One to One (1:1)</li>
+                    <li>One to Many (1:M)</li>
+                    <li>Many to Many (M :N)</li>
+                </ol>
+
+                <p id="header1"><b>(01.) One to One Relationship (1:1)</b></p>
+
+                <center><img height="200px" width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770915598/Ss12_ookz9y.jpg"
+                        alt></center>
+
+                <p>මේ තියෙන්නේ 1:1 relationship එකක්.එහෙමත් නැත්නම් ඒක ඒක
+                    සම්බන්ධයක් කියලත් කියනවා.</p>
+                <p id="header1"><b>1:1 relationship එකක් කියන්නේ ඇයි ?</b></p>
+
+                <p>
+                    මම දාපු example image එකේ entities 2ක් වගේම ඒ දෙක අතරෙ
+                    relationship එකක් තියන බව දැන් ඔයාලට පැහැදිලිනෙ.relationship
+                    එකත් එක්ක read කලොත් හැම country එකකටම country code එකක්
+                    තියනවා.
+                    cardinality එක(ගණනියතාවය) පැහැදිලිව අදුරගන්න නම් entities
+                    දෙකම සලකන්න වෙනවා.
+                </p>
+
+                <p id="relationship">එක රටකට තියෙන්න පුළුවන් එක country code
+                    එකයි, එක country code එකක් use කරන්නේ එක country එකක්
+                    විතරයි.</p>
+
+                <center><img height="250px" width="600px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770916019/Ss15_okerky.jpg"
+                        alt></center>
+
+                <p>මේ විදියට ER Diagram එකේ entities දෙකක් අතරෙ තියන
+                    relationship එක read කලාම cardinality එක ලේසියෙන්ම අදුරගන්න
+                    පුළුවන්.</p>
+
+                <p id="header1"><b>(02.) One to Many Relationship (1:M)</b></p>
+                <p>1:M නැත්නම් M:1 දෙකම එකක් විදියට තමයි සලකන්නේ.</p>
+
+                <center><img height="200px" width="550px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770916508/Ss14_jwqsgo.jpg"
+                        alt></center>
+
+                <p>මේකත් අපිට 1:1 relationship එක වගේම read කරන්න පුළුවන්.</p>
+                <p id="relationship">
+                    එක class එකකට studentsලා ගොඩක් ඉන්න පුළුවන්.එක student
+                    කෙනෙකුට ඉන්න පුළුවන් එක class එකක විතරයි.
+                </p>
+
+                <center><img height="200px" width="600px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770916720/Ss16_onmjp4.jpg"
+                        alt></center>
+
+                <p id="header1"><b>(03.) Many to Many Relationship (M:N)</b></p>
+
+                <center><img height="200px" width="550px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770916914/Ss17_c4tat2.jpg"
+                        alt></center>
+
+                <p id="relationship">
+                    එක Student කෙනෙකුට Subject ගොඩක් ඉගෙන ගන්න පුළුවන්.එක
+                    Subject එකක් ඉගෙන ගන්න Students ලා ගොඩක් ඉන්න පුළුවන්.
+                </p>
+
+                <center><img height="200px" width="550px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770917066/Ss18_upgtpa.jpg"
+                        alt></center>
+
+                <p id="header1"><b>Many to Many relationship එකක M:M නොවී M:N
+                        වෙන්නේ ඇයි?</b></p>
+
+                <p>
+                    Many to Many එකක දෙපැත්තම M:M කියල දැම්මොත් අදහස් වෙන්නේ
+                    දෙපැත්තේම ගොඩක් තියනවා හැබැයි එක සමානයි කියන එක.
+                    ඒ කියන්නේ Students ලා 10ක් ඉන්නවා නම් subjects නුත් 10ක්
+                    තියනවා.
+                    අපිට අදහස් කරන්න ඕන උනේ ඒක නෙවෙයි නෙ.දෙපැත්තේම ගොඩක්
+                    ඉන්නවා..ඒ ප්‍රමාණ අසමාන වෙන්න පුළුවන්.ඒකනිසා තමයි M:N
+                    වෙන්නේ.
+                    <br>ඔයාලට මේක හොදටම තේරේවි 1:1 එකෙන් හිතුවොත් . එකේ
+                    දෙපැත්තේම තියෙන්නේ සමාන ප්‍රමාණ නිසා (1යි) තමයි 1:1 වෙන්නේ.
+
+                    අපි cardinality ගැන කතා කලානෙ. cardinality එක එක විදියට
+                    නිරුපණය කරන්න පුළුවන්.1:1 , 1:M , M:N කියන්නේ Chen’s
+                    notation කියන වර්ගය . තවත් වර්ගයක් තමයි Crow foot notation
+                    කියන්නේ.<br>මේකෙදි use කරන්නේ mandatoy and optional කියන
+                    දෙක.mandatoy නම් | symbol එකත් , optional නම් 0 symbol එකත්
+                    use වෙනවා.
+                    මෙහි one නිරුපණය කරන්නේ normal විදියට 1 ගෙන්.many නිරුපණය
+                    කරන්නේ < මේ symbol එකෙන්.
+                </p>
+
+                <center><img height="200px" width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770917495/Ss26_w6kspj.jpg"
+                        alt></center>
+
+                <p>
+                    mandatory හා optional කියන දෙක අදුරගන්නෙ මෙහෙමයි.<br>
+                    teacher කෙනෙකුට class එකක් තියෙන්නම ඕනිද?<br>
+                    class එකකට teacher කෙනෙක් ඉන්නම ඕනිද?<br>
+                </p>
+
+                <p>
+                    class එකක් නැති teachers ලා ඉන්නත් පුළුවන් නිසා teachers
+                    කෙනෙකුට class එකක් තියෙන්නේ ඕනිම නෑ.ඒකනිසා ඒක optional (0).
+                    class එකකට අනිවාර්යයෙන් teachers කෙනෙක් ඉන්න ඕනි නිසා ඒක
+                    mandatory (|).
+                </p>
+
+                <center><img height="250px" width="550px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770917646/main_eshcir.png"
+                        alt></center>
+
+                <p>
+                    අපි දැන් කතා කලේ relationship එකක් cardinality එක අනුව බෙදෙන
+                    විදියයි notations ගැනයිනෙ.
+                    Entity වල වගේම relationships වලත් Week relationship කියල
+                    එකක් තියනවා.
+                </p>
+
+                <p id="header1"><b>Week Relationship</b></p>
+
+                <p>
+                    Week entity එකක් කියන්නේ මොකක්ද කියල ඔයාලට මතක ඇති.මේ week
+                    relationship එකක් ඇති වෙන්නේ strong entity එකකුයි week
+                    entity එකකුයි අතරෙ.
+                </p>
+
+                <center><img height="250px" width="550px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770917809/Ss19_o6uxvj.jpg"
+                        alt></center>
+
+                <div class="summary-box">
+                    <h3>📌 Summary</h3>
+                    <p>
+                        අද අපි කතා කලේ,<br>
+                        Entity, Attributes, Relationship වර්ග,<br>
+                        Relationship එකක cardinality එක ගැන,<br>
+                        Chen’s notation and crow foot notation ගැන.
+                    </p>
+                </div>
+
+                <div class="next-box">
+                    <h3>⏭️ Coming Up Next</h3>
+                    <p>
+                        Next Part එකෙන්,<br>
+                        ER එකක, db එකක තවත් වැදගත්ම දෙයක් වෙන primary key &
+                        foriegn key ගැන,<br>
+                        mySQL installing part එක ගැන<br>
+                        කතා කරමු.<br>
+                        <i>Read next > MySQL Part 3</i>
+                    </p>
+
+                    <hr>
+                </div>
+
+                <center><p><h3>Thanks for tuning in. Until next time, stay
+                            tech-savvy!</h3></p></center>
+
+            </div>
+
+            <!-- ENGLISH CONTENT -->
+            <div class="post-content lang-en">
+                <h1><u>MySQL Part 2</u></h1>
+
+                <p>
+                    My purpose in writing this blog is to share how to create a
+                    database using MySQL. So if you are someone who wants to get
+                    into the programming side and learn about MySQL, this
+                    article will be very important for you.
+                </p>
+
+                <div class="previous-box">
+                    <h3>📚 From Previous Blog</h3>
+
+                    <p>
+                        What is an ER Diagram in MySQL Part I?<br>
+                        I got a simple idea about Entity, Relationship and
+                        Attribute
+                        Remember.
+                        If you haven't read MySQL Part I, read that too..<br>
+                        <a href="mysql-part-1.html" class="prev-link">
+                            👉 Read MySQL Part I
+                        </a>
+
+                    </p>
+
+                    <p>
+                        Let's go to today's part...<br>
+                        Today we will talk deeply about Entity, Relationship and
+                        Attribute.
+                    </p>
+                </div>
+
+                <p id="header1"><b>What is an entity ? (Strong
+                        Entity)</b></p>
+
+                <p>
+                    An entity can be a person, a place, or an event.
+                    An entity is represented by a rectangle.
+                    The name of this entity must be singular. That is,
+                    there cannot be an entity called Students.
+                </p>
+
+                <center>
+                    <img height="200px" width="450px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770913441/Ss8_xkcp69.jpg"
+                        alt>
+                </center>
+
+                <p>
+                    Also, a table is created in the database for each Entity in
+                    ER. There are types of entities. Normally, an entity is
+                    drawn like this. We call it a Strong Entity. There are also
+                    Strong and Weak entities.
+                </p>
+
+                <p id="header1"><b>Week Entity</b></p>
+
+                <center><img height="200px" width="400px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770913665/Ss9_dmwdow.jpg"
+                        alt></center>
+
+                <p>A week entity is represented as a rectangle within a
+                    rectangle. Employee children depend on the employee. Such
+                    entities are called week entities.</p>
+
+                <hr>
+                <p>The second part of an ER is called attributes.….</p>
+
+                <p id="header1"><b>What is an attribute ?</b></p>
+
+                <p>
+                    The things used to describe an Entity in an ER are called
+                    attributes. As an example, if we consider the entity
+                    Student, how can we describe the Student?<br>
+
+                    The student has things like a name, age, date of birth, and
+                    address. These things are called attributes. We can
+                    represent it like this.
+                </p>
+
+                <center><img height="250px" width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770913955/Ss10_ump5xj.jpg"
+                        alt></center>
+
+                <p>From a database perspective, the columns in the Student table
+                    are the attributes in the ER.</p>
+
+                <p>There are 4 types of attributes.</p>
+
+                <ol>
+                    <li>Simple attributes</li>
+                    <li>Composite attributes</li>
+                    <li>Derived attributes</li>
+                    <li> Multivalued attributes</li>
+                </ol>
+
+                <p id="header1"><b>(01.) Simple Attributes</b></p>
+                <p>That is, like we talked about before, a normal attribute.</p>
+                <center><img height="250px" width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770914286/Ss20_zk3wc9.jpg"
+                        alt></center>
+
+                <p id="header1"><b>(02.) Composite Attributes</b></p>
+                <p>A composite attribute is an attribute with other
+                    attributes...it may not be clear to say that. Let's see with
+                    an example.</p>
+
+                <center><img height="250px" width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770914636/Ss21_r92bwc.jpg"
+                        alt></center>
+
+                <p>
+                    You can read it now until you get to the point where it says
+                    that the student has a name. A name can have two parts:
+                    first name and last name (surname). That is what is meant by
+                    having other properties. If you don't understand, let's look
+                    at another example.
+                </p>
+
+                <center><img height="250px" width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770914792/Ss23_vjwnov.jpg"
+                        alt></center>
+
+                <p>
+                    Simply put, an address is made up of three parts: country,
+                    city
+                    and street. (It can vary from ER to ER, depending on the
+                    purpose
+                    )
+                </p>
+
+                <p id="header1"><b>(03.) Derived Attributes</b></p>
+
+                <p>
+                    We can get the value of this attribute type even if we use
+                    another attribute. For example, if we have the date of birth
+                    (dob) stored in the database, we can calculate the age using
+                    that. Attributes like this are called derived
+                    attributes.</p>
+
+                <center><img height="200px" width="550px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770914967/Ss24_x0bryf.jpg"
+                        alt></center>
+
+                <p id="header1"><b>(04.) Multivalued Attributes</b></p>
+                <p>Multivalued Attributes are those that have multiple values.
+                    An example is a phone number.
+                    Since a person can have more than one phone number, it can
+                    be said to be
+                    Multivalued.</p>
+
+                <center><img height="200px" width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770915102/Ss25_qjudzy.jpg"
+                        alt></center>
+
+                <hr>
+
+                <p>The 3rd part of an ER is the relationship….</p>
+
+                <p id="header1"><b>What is a relationship in an ER
+                        ?</b></p>
+
+                <p>A relationship is a connection between two entities. That is,
+                    between two tables in a database. When drawing an ER
+                    Diagram, a relationship is represented as follows.</p>
+
+                <center><img height="200px" width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770915334/Ss11_ooaekv.jpg"
+                        alt></center>
+
+                <p>
+                    This symbol contains a verb. That verb should match the
+                    entities. I will explain how a relationship and an entity
+                    are related.<br>
+
+                    If there is a relationship between two entities, it must
+                    have a cardinality. Depending on that cardinality, there are
+                    3 types of relationships.
+                </p>
+
+                <ol>
+                    <li>One to One (1:1)</li>
+                    <li>One to Many (1:M)</li>
+                    <li>Many to Many (M :N)</li>
+                </ol>
+
+                <p id="header1"><b>(01.) One to One Relationship (1:1)</b></p>
+
+                <center><img height="200px" width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770915598/Ss12_ookz9y.jpg"
+                        alt></center>
+
+                <p>This is a 1:1 relationship. Otherwise, it is also called a
+                    relationship.</p>
+                <p id="header1"><b>Why is it called a 1:1 relationship?</b></p>
+
+                <p>
+                    In the example image I posted, it is now clear to you that
+                    there are 2 entities and a relationship between them. If you
+                    read the relationship, each country has a country code. To
+                    clearly understand the cardinality, you have to consider
+                    both entities.
+                </p>
+
+                <p id="relationship">A country can only have one country code,
+                    and only one country can use one country code.</p>
+
+                <center><img height="250px" width="600px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770916019/Ss15_okerky.jpg"
+                        alt></center>
+
+                <p>In this way, the cardinality can be easily determined by
+                    reading the relationship between two entities in the ER
+                    Diagram.</p>
+
+                <p id="header1"><b>(02.) One to Many Relationship (1:M)</b></p>
+                <p>Both 1:M and M:1 are considered the same.</p>
+
+                <center><img height="200px" width="550px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770916508/Ss14_jwqsgo.jpg"
+                        alt></center>
+
+                <p>We can read this as a 1:1 relationship.</p>
+                <p id="relationship">
+                    There can be many students in one class. A student can only
+                    be in one class.
+                </p>
+
+                <center><img height="200px" width="600px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770916720/Ss16_onmjp4.jpg"
+                        alt></center>
+
+                <p id="header1"><b>(03.) Many to Many Relationship (M:N)</b></p>
+
+                <center><img height="200px" width="550px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770916914/Ss17_c4tat2.jpg"
+                        alt></center>
+
+                <p id="relationship">
+                    One student can study many subjects. There can be many
+                    students studying one subject.
+                </p>
+
+                <center><img height="200px" width="550px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770917066/Ss18_upgtpa.jpg"
+                        alt></center>
+
+                <p id="header1"><b>Why is it M:N
+                        instead of M:M in a Many to Many relationship?</b></p>
+
+                <p>
+                    If we put both sides of a Many to Many as M:M, it means that
+                    there are many on both sides but they are the same. That
+                    means if there are 10 students, there are also 10 subjects.
+                    That is not what we wanted to mean. There are many on both
+                    sides. Those quantities can be unequal. That is why it is
+                    M:N. You will understand this very well if you think of it
+                    in terms of 1:1. Since there are equal quantities on both
+                    sides (1), it is 1:1. We talked about cardinality.
+                    Cardinality can be expressed in the same way. 1:1, 1:M, M:N
+                    are types of Chen’s notation. Another type is Crow foot
+                    notation. In this, we use two types of mandatory and
+                    optional. If mandatory, the symbol | is used, and if
+                    optional, the symbol 0 is used. Here one is represented by 1
+                    as normal. Many is represented by < this symbol.
+                </p>
+
+                <center><img height="200px" width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770917495/Ss26_w6kspj.jpg"
+                        alt></center>
+
+                <p>
+                    This is how to distinguish between mandatory and
+                    optional.<br>
+                    Does a teacher have to have a class?<br>
+                    Does a class need to have a teacher?<br>
+                </p>
+
+                <p>
+                    Since there can be teachers without a class, it is not
+                    necessary for a teacher
+                    to have a class. Therefore, it is optional (0).
+                    Since a class must have a teacher, it is
+                    mandatory (|).
+                </p>
+
+                <center><img height="250px" width="550px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770917646/main_eshcir.png"
+                        alt></center>
+
+                <p>
+                    We just talked about notations for dividing a relationship
+                    according to cardinality.
+                    Just like in entities, relationships also have a
+                    relationship called Week relationship.
+                </p>
+
+                <p id="header1"><b>Week Relationship</b></p>
+
+                <p>
+                    You may remember what a week entity is. This week
+                    relationship is formed between a strong entity and a week
+                    entity.
+                </p>
+
+                <center><img height="250px" width="550px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770917809/Ss19_o6uxvj.jpg"
+                        alt></center>
+
+                <div class="summary-box">
+                    <h3>📌 Summary</h3>
+                    <p>
+                        Today we talked,<br>
+                        Entity, Attributes, Relationship types,<br>
+                        About the cardinality of a relationship,<br>
+                        About Chen's notation and crow foot notation.
+                    </p>
+                </div>
+
+                <div class="next-box">
+                    <h3>⏭️ Coming Up Next</h3>
+                    <p>
+                        From the next part,<br>
+                        About primary key &
+                        foreign key, which is another important thing in an ER,
+                        a db,<br>
+                        About the mySQL installing part<br>
+                        let's talk<br>
+                        <i>Read next > MySQL Part 3</i>
+                    </p>
+
+                    <hr>
+                </div>
+
+                <center><p><h3>Thanks for tuning in. Until next time, stay
+                            tech-savvy!</h3></p></center>
+
+            </div>
+
+            <div class="comment-section">
+
+                <h3>💬 Comments</h3>
+                <input type="text" id="name" placeholder="Your Name">
+                <textarea id="comment"
+                    placeholder="Write your comment..."></textarea>
+                <button onclick="addComment()">Post Comment</button>
+                <div id="commentList"></div>
+
+            </div>
+
+        </main>
+
+        <script src="../js/postLang.js"></script>
+        <script src="../js/app.js"></script>
+
+    </body>
+
+</html>

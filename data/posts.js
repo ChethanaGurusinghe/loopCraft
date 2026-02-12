@@ -1,30 +1,31 @@
 const posts = {
   1: {
-  image: "https://res.cloudinary.com/dy07nxsrf/image/upload/v1770829823/Gemini_Generated_Image_sb715wsb715wsb71_ubnume.png",
+  image: "https://res.cloudinary.com/dy07nxsrf/image/upload/v1770908799/Gemini_Generated_Image_19mh6919mh6919mh_bvkg7g.png",
   file: "posts/mysql-part-1.html",   
 
   en: {
     title: "SQL Part 1 - 11 Dec 2025",
-    excerpt: "SQL is used to manage and manipulate databases."
+    excerpt: "A data set is created using some medium ..."
   },
 
   si: {
-    title: "SQL කොටස 1",
-    excerpt: "SQL යනු දත්ත සමුදා කළමනාකරණය සඳහා භාවිතා කරන භාෂාවකි."
+    title: "SQL 1 කොටස - 11 Dec 2025",
+    excerpt: "data set එකක් මොකක් හරි මාධ්‍යක් use කරලා ..."
   }
 },
 
   2: {
-    image: "assets/posts/sql2.png",
-    en: {
-      title: "SQL Part 2",
-      excerpt: "Basic SQL commands include SELECT, INSERT, UPDATE, DELETE.",
-      content: "Basic SQL commands include SELECT, INSERT, UPDATE, DELETE."
-    },
-    si: {
-      title: "SQL කොටස 2",
-      excerpt: "මූලික SQL විධාන SELECT, INSERT, UPDATE සහ DELETE වේ.",
-      content: "මූලික SQL විධාන SELECT, INSERT, UPDATE සහ DELETE වේ."
-    }
+  image: "https://res.cloudinary.com/dy07nxsrf/image/upload/v1770908633/Gemini_Generated_Image_cj3s1hcj3s1hcj3s_pdktli.png",
+  file: "posts/mysql-part-2.html",   
+
+  en: {
+    title: "SQL Part 2 - 14 Dec 2025",
+    excerpt: "An entity is someone , a place , ..."
+  },
+
+  si: {
+    title: "SQL 2 කොටස - 14 Dec 2025",
+    excerpt: "Entity එකක් කියන්නේ කවුරුහරි කෙනෙක් , තැනක් ,..."
   }
+},
 };

@@ -270,6 +270,15 @@ button {
     font-size: 18px;
 }
 
+.lang-en p {
+    font-size: 18px;
+}
+
+.lang-en {
+    letter-spacing: 0.7px;
+    line-height: 1.5;
+}
+
 #header1{
     font-size: 27px;
     color: #e06705;
@@ -374,4 +383,53 @@ button {
 
 .comment-section button{
     margin-top: 10px;
+}
+
+.back-btn{
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 6px 14px;
+    font-size: 14px;
+}
+
+.previous-box {
+    margin: 25px 0;
+    padding: 18px 22px;
+
+    border-left: 6px solid #ff6b00;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255, 140, 0, 0.08),
+        rgba(255, 80, 0, 0.05)
+    );
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.previous-box h3 {
+    margin-bottom: 10px;
+    color: #ff6b00;
+}
+
+.previous-box p {
+    line-height: 1.6;
+}
+
+.prev-link{
+    display:inline-block;
+    margin-top:10px;
+    color:#ff6b00;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.prev-link:hover{
+    text-decoration:underline;
+}
+
+#relationship{
+    color: #16c2fc;
 }
