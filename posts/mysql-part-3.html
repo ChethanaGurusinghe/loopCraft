@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>MySQL Part 3</title>
+        <link rel="stylesheet" href="../css/style.css" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="brand">
+                <img src="../assets/logo.png" class="logo" />
+                <span class="brand-name">LoopCraft</span>
+            </div>
+        </header>
+
+        <main class="container">
+            <a href="../blog.html" class="card-btn back-btn">⬅ View All
+                Blogs</a>
+
+            <div class="post-content lang-si">
+                <h1 id="title"><u>MySQL කොටස 3</u></h1>
+                <p>
+                    මේ blog එක ලියන එකෙන් මගේ purpose එක වෙන්නේ MySql use කරලා
+                    database
+                    එකක් හදාගන්නේ කොහොමද කියන එක ගැන share කරන එක. ඉතින් ඔයා
+                    programming
+                    side එකට enter වෙලා mySQL ගැන දැනගන්න කැමති කෙනෙක් නම් ඔයාට
+                    මේ article
+                    එක ගොඩක් වැදගත් වේවි.
+                </p>
+
+                <div class="previous-box">
+                    <h3>📚 From Previous Blog</h3>
+
+                    <p>
+                        MySQL part II එකේ Entity, Attributes, Relationship
+                        වර්ග,<br />
+                        Relationship එකක cardinality එක ගැන,<br />
+                        Chen’s notation and crow foot notation ගැන කතා කලා මතක
+                        ඇති. MySQL
+                        Part II කියෙව්වේ නැත්නම් ඒකත් කියවලම එන්න.<br />
+                        <a href="mysql-part-2.html" class="prev-link">
+                            👉 Read MySQL Part II
+                        </a>
+                    </p>
+
+                    <p>
+                        අපි යමු අද Part එකට…<br />
+                        අද Primary key & foreign key ගැන කතා කරනවා.
+                    </p>
+                </div>
+
+                <p id="sub-titles"><b>Primary Key</b></p>
+
+                <p id="header1"><b>Primary key එකක් කියන්නේ මොකක්ද?</b></p>
+
+                <p>
+                    Primary key එකක් කියන්නේ tabale එකක එක row එකක් වෙන් කරලා
+                    අදුරගන්න අපි
+                    use කරන data එකට..<br />
+                    Example එකක් විදියට student කියන table එකේ primary key එක
+                    විදියට
+                    student_id කියන එක use කරන්න පුළුවන්…නැත්තම් NIC එක….නමක්
+                    use කරන්න
+                    බැහැ…මොකද එකම නම තියන students ලා කීපදෙනෙක් ඉන්න පුළුවන්.
+                </p>
+
+                <p id="header1"><b>අපි primary key එකක් use කරන්නේ ඇයි ?</b></p>
+
+                <p>
+                    Data repeat වෙන එක වලක්වන්න, ඒ කියන්නේ එකම data එක නැවත නැවත
+                    insert
+                    කරන එක නවත්තන්න අපි primary එකක් use කරනවා..<br />
+
+                    තව දෙයක් තමයි table එකේ record එකක් වෙන් කරලා අදුනගන්නත් අපි
+                    primary
+                    key එකක් use කරනවා..<br />
+
+                    මම දැන් කියපු දේවල් වල වැදගත් Points දෙකක් තියනවා.ඒ තමයි
+                    primary key
+                    එක unique වෙන්න ඕනි. repeat වෙන්න බෑ(එකම primary key එක
+                    records දෙකක
+                    තියෙන්න බෑ)..වෙන් කරලා අදුරගන්න පුළුවන් වෙන්න ඕනි
+                    නිසා..අනිත් එක තමයි
+                    primary එක empty (null ) වෙන්න බැහැ..
+                </p>
+
+                <p id="header1">
+                    <b>ER Diagram එකක Primary key එකක් නිරුපනය කරන්නේ
+                        කොහොමද?</b>
+                </p>
+
+                <center>
+                    <img
+                        height="200px"
+                        width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770982663/Ss27_wqaxp3.jpg"
+                        alt />
+                </center>
+
+                <p>
+                    table එකක primary key එකක් තෝරාගනිද්දි සැලකිලිමත් වෙන්න ඕනි
+                    ඒක repeat
+                    වෙනවද කියන එක ගැන…හැම student කෙනෙකුටම unique වුන register
+                    number එකක්
+                    තියන නිසා ඒක primary key එක වෙනවා.
+                </p>
+
+                <p id="sub-titles"><b>Foreign Key</b></p>
+                <p>
+                    Foriegn key එකක් කියන්නේ මොකක්ද කියලා example එකකින්
+                    බලමු.හැබැයි
+                    සාමාන්‍යයෙන් Foriegn key එකක් ER එකක නිරුපණය කරන්නේ නෑ.ඒකට
+                    හේතුව
+                    ඉස්සරහට කියන්නම්..
+                </p>
+
+                <center>
+                    <img
+                        height="200px"
+                        width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770982818/Ss28_m2slym.jpg"
+                        alt />
+                </center>
+
+                <p>
+                    Student හා class කියන එක අතරේ relationship එකක් තියනවා නේ.ඒ
+                    relationship එකේ cardinality එක අනුව තමයි foriegn key එක
+                    තීරණය වෙන්නේ.
+                    ඒ කියන්නේ Student ගේ reg_no කියන primary key එක class කියන
+                    tabale එකේ
+                    ගිහින් store වෙනවා එකේ foriegn key එක විදියට.1 side එකේ තියන
+                    primary
+                    key එක M side එකට shift වෙනවා.<br />
+
+                    තේරුනේ නැත්තම් ආයේ බලමුකෝ…ඔයාලට මතක ඇති cardinality වර්ග
+                    තුනක් තියනවා
+                    කියල කිව්වා..1:1 , 1:M , M:N . මතක නැත්නම් MySQL Part II
+                    කියවලා එන්න..
+                    මෙන්න මේ cardinality එක අනුව foriegn key එක store වෙන විදිය
+                    වෙනස්
+                    වෙනවා.මෙන්න මෙහෙමෙයි ඒක වෙන්නේ…
+                </p>
+
+                <p id="relationship">
+                    Entities දෙක අතරේ තියෙන්නේ 1:1 relationship එකක් නම්,
+                </p>
+
+                <p>Foreign key එක මොන පැත්තෙන් store කරත් අවුලක් නෑ.</p>
+
+                <center>
+                    <img
+                        height="150px"
+                        width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770983028/Ss29_tdjpb6.jpg"
+                        alt />
+                </center>
+
+                <p>
+                    Entities වලට primary keys දෙක විතරක් add කලා පැහැදිලි වෙන්න
+                    ඕන නිසා.
+                    1:1 relationship එකක් නම් තියෙන්නේ country එකේ primary key
+                    එක(name)
+                    code side එකේ හරි, code එකේ primary key එක(id) country side
+                    එකේ store
+                    කලත් අවුලක් නෑ.
+                </p>
+
+                <p id="relationship">
+                    Entities දෙක අතරේ තියෙන්නේ 1:M relationship එකක් නම්,
+                </p>
+
+                <center>
+                    <img
+                        height="150px"
+                        width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770983158/Ss30_gnfwoi.jpg"
+                        alt />
+                </center>
+
+                <p>
+                    1:M relationship එකක් නම් තියෙන්නේ 1 side එකේ තියන primary
+                    key එක M
+                    side එකේ store වෙනවා..මේ Example එකේ විදියට නම් stu_id එක
+                    Class table
+                    එකේ store වෙනවා.
+                </p>
+
+                <p id="relationship">
+                    Entities දෙක අතරේ තියෙන්නේ 1:M relationship එකක් නම්,
+                </p>
+
+                <p>මේක ටිකක් විතර case…අනිත් දෙකට වැඩ ටිකක් වෙනස්..</p>
+
+                <center>
+                    <img
+                        height="200px"
+                        width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770983306/Ss31_nyxczb.jpg"
+                        alt />
+                </center>
+
+                <p>
+                    M:N relationship එකක් නම් තියෙන්නේ ඒකට වෙනම table එකක්
+                    හැදෙන්න ඕනි.ඒ
+                    කිව්වේ reg _no හා course_id දෙකත් ඇතුලත් වෙලා relationship
+                    එකෙත් තව
+                    attributes තියනවා නම් ඒවත් වක්ක අලුත් table එකක්
+                    හැදෙනවා.<br />
+
+                    Foreign keys ගැන කතාව ඔහොමයි. Foreign keys ගැන කතා කරපු ටිකේ
+                    අපැහැදිලි
+                    තැන් ඇති.කියවලා සරල අදහසක් ඔලුවට ගන්න. Database එක හදනකොට
+                    foreign keys
+                    ගැන හරියට තේරුම් යාවි.
+                </p>
+
+                <p>
+                    Foreign keys ගැන කියන්න පටන් ගන්නකොටම මම කිව්වා සාමාන්‍යයෙන්
+                    Foriegn
+                    key එකක් ER එකක නිරුපණය කරන්නේ නෑ කියලා. ඒකට හේතුව දැන්
+                    කියන්නම්….
+                    database එක හදන්නේ ER එක දිහා බලගෙන නේ…ER එක කියන්නේ
+                    database හදන්න
+                    කලින් ඒ ගැන දල අදහසක් ගන්න අපි අදින diagrma එකක්.<br />
+                    ER එක අදිනකොට හැම relationship එකකටම අදාල cardinality එක අපි
+                    සදහන්
+                    කරන්න ඕන. ඒ දාල තියන cardinality එක අනුව foreign key එක
+                    store වෙන්නේ
+                    database එකේ මොන tabale එකේද කියලා කියන්න පුළුවන් නේ.ඒකට
+                    තමයි
+                    cardinality එක අනුව foreign key එක store වෙන විදිය ගැන කියලා
+                    දුන්නේ..<br />
+                    database එකක් හදනකොට ගොඩක් සැලකිලිමත් වෙන්න ඕන දෙයක් තමයි
+                    foreign key
+                    එක.මොකද table එකට එකක් සම්බන්ධ වෙන්නේ මේ foreign keys වලින්.
+                </p>
+
+                <p>
+                    ER එකක් අදින්න අත්‍යවශ්‍ය වෙන theory parts ටික
+                    complete..දැන් ඔයාලට complete ER එකක් අදින්න පුළුවන්. ER
+                    එකක් අදිනකොට නිකන් කොලයක අදින්නත් පුළුවන්…නැත්තම් draw.io
+                    වගේ platform එකක් use කරන්නත් පුළුවන්.
+                </p>
+
+                <p>
+                    <a href="https://www.drawio.com/" target="_blank"> Draw ER
+                        Diagrams using draw.io</a>
+                </p>
+
+                <p>
+                    දැන් අපිට තියෙන්නේ ER එකට අනුව database එක හදන්න.<br>
+
+                    Database එක හදන්න කලින් එකට ඕන විදියට අපේ machine එක ready
+                    කරගෙන ඉන්න ඕනි. ඒකට මුලින්ම MYSQL download කරගන්න ඕනි.
+                </p>
+
+                <p id="relationship">📥 Steps to download ...</p>
+
+                <p>
+                    Search mysql ➡️ Go to the first link in the search results
+                    ➡️ Go to downloads ➡️ Click download now ➡️ Install after
+                    downloading
+                </p>
+
+                <p>
+                    <a href="https://www.mysql.com/downloads/">Download SQL</a>
+                </p>
+
+                <p>
+                    ඔයා හරියටම MySQL install කලා නම් cmd/terminal එක open කරලා
+                    මේ command එක දීලා බලන්න. (Command : mysql -u root -p)
+                </p>
+
+                <center><img height="250px" width="550px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770984239/Ss32_akquln.jpg"
+                        alt></center>
+
+                <p>mysql -u root -p දීලා ඊළගට ඔයා දීපු password එක enter
+                    කරන්න.</p>
+
+                <center><img height="205px" width="550px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770984384/Ss33_sq4txt.jpg"
+                        alt></center>
+
+                <p>
+                    password එක enter කලාට පස්සේ මේ වගේ feedback එකක් එනවා නම්
+                    MySQL ඔයාගේ machine එකට හරියට install වෙලා.එහෙනම් MySql
+                    install කරලා තියාගන්න…MySQL Part IV එකේ ඉදලා ready වෙන්න අපි
+                    ඇදපු ගෙදර plan එකට ගෙයක් හදන්න😜
+                </p>
+
+                <div class="summary-box">
+                    <h3>📌 Summary</h3>
+                    <p>
+                        අද අපි කතා කලේ,<br>
+                        Primary key, Foreign Key ගැන,<br>
+                        කොහොමද Foreign Key එකක් table එකක store වෙන්නේ කියන
+                        එක,<br>
+                        MySQL හරියට ඔයාගේ machine එකට install කරන විදිය ගැන.
+                    </p>
+                </div>
+
+                <div class="next-box">
+                    <h3>⏭️ Coming Up Next</h3>
+                    <p>
+                        Next Part එකෙන්,<br>
+                        SQL ගැන,<br>
+                        Databse එකක් හදලා වැඩ කරන හැටි ගැන කතා කරමු<br>
+                        <i>Read next > MySQL Part 4</i>
+                    </p>
+
+                    <hr>
+                </div>
+
+                <center><p><h3>Thanks for tuning in. Until next time, stay
+                            tech-savvy!</h3></p></center>
+
+            </div>
+
+            <div class="post-content lang-en">
+                <h1 id="title"><u>MySQL Part 3</u></h1>
+                <p>
+                    My purpose in writing this blog is to share how to create a
+                    database using MySQL. So if you are interested in getting
+                    into the programming side and want to learn about MySQL,
+                    this article will be very important for you.
+                </p>
+
+                <div class="previous-box">
+                    <h3>📚 From Previous Blog</h3>
+
+                    <p>
+                        Types of Entity, Attributes, Relationship in MySQL part
+                        II,<br />
+                        About the cardinality of a relationship,<br />
+                        Chen’s notation and crow foot notation.
+                        If you haven’t read MySQL
+                        Part II, go read it.<br />
+                        <a href="mysql-part-2.html" class="prev-link">
+                            👉 Read MySQL Part II
+                        </a>
+                    </p>
+
+                    <p>
+                        Let's go to today's part...<br />
+                        Today we are talking about primary key & foreign key.
+                    </p>
+                </div>
+
+                <p id="sub-titles"><b>Primary Key</b></p>
+
+                <p id="header1"><b>What is a primary key?</b></p>
+
+                <p>
+                    A primary key is the data that we use to identify a row in a
+                    table.<br />
+                    For example, in a table called student, you can use
+                    student_id as the primary key…or NIC….You can’t use a
+                    name…because there can be multiple students with the same
+                    name.
+                </p>
+
+                <p id="header1"><b>Why do we use a primary key?</b></p>
+
+                <p>
+                    To prevent data from repeating, that is, to stop the same
+                    data from being inserted repeatedly, we use a primary
+                    key.<br />
+
+                    Another thing is that we use a primary key to distinguish
+                    and identify a record in the table.<br />
+
+                    There are two important points in what I just said. That is,
+                    the primary key must be unique. It cannot be repeated (the
+                    same primary key cannot be in two records).. Because it must
+                    be able to distinguish and identify.. The other is that the
+                    primary key cannot be empty (null)..
+                </p>
+
+                <p id="header1">
+                    <b>How do you define a primary key in an ER Diagram?</b>
+                </p>
+
+                <center>
+                    <img
+                        height="200px"
+                        width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770982663/Ss27_wqaxp3.jpg"
+                        alt />
+                </center>
+
+                <p>
+                    When choosing a primary key for a table, you need to be
+                    careful whether it is repeated… Since each student has a
+                    unique registration number, it becomes the primary key.
+                </p>
+
+                <p id="sub-titles"><b>Foreign Key</b></p>
+                <p>
+                    Let's see what a foreign key is with an example. However, a
+                    foreign key is not usually defined in an ER. I'll explain
+                    the reason for that later..
+                </p>
+
+                <center>
+                    <img
+                        height="200px"
+                        width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770982818/Ss28_m2slym.jpg"
+                        alt />
+                </center>
+
+                <p>
+                    There is a relationship between Student and class. The
+                    foreign key is determined according to the cardinality of
+                    that relationship. That is, the primary key of Student,
+                    reg_no, is stored in the class table as its foreign key. The
+                    primary key on the 1 side is shifted to the M side.<br />
+
+                    If you don't understand, let's look again... You may
+                    remember that there are three types of cardinality. 1:1,
+                    1:M, M:N. If you don't remember, read MySQL Part II. Here,
+                    the way the foreign key is stored changes according to this
+                    cardinality. Here's how it happens...
+                </p>
+
+                <p id="relationship">
+                    If there is a 1:1 relationship between the two entities,
+                </p>
+
+                <p>It doesn't matter where you store the foreign key.</p>
+
+                <center>
+                    <img
+                        height="150px"
+                        width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770983028/Ss29_tdjpb6.jpg"
+                        alt />
+                </center>
+
+                <p>
+                    Only two primary keys were added to the entities for
+                    clarity.
+                    If there is a 1:1 relationship, the primary key of the
+                    country
+                    (name)
+                    is stored on the code side, and the primary key of the code
+                    (id)
+                    is stored on the country side
+                    .
+                </p>
+
+                <p id="relationship">
+                    If there is a 1:M relationship between the two entities,
+                </p>
+
+                <center>
+                    <img
+                        height="150px"
+                        width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770983158/Ss30_gnfwoi.jpg"
+                        alt />
+                </center>
+
+                <p>
+                    In a 1:M relationship, the primary key on the 1 side is
+                    stored on the M side. In this example, the stu_id is stored
+                    in the Class table.
+                </p>
+
+                <p id="relationship">
+                    If there is a 1:M relationship between the two entities,
+                </p>
+
+                <p>This is a bit of a case...the other two work a little
+                    differently..</p>
+
+                <center>
+                    <img
+                        height="200px"
+                        width="500px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770983306/Ss31_nyxczb.jpg"
+                        alt />
+                </center>
+
+                <p>
+                    If there is an M:N relationship, a separate table should be
+                    created for it. That is, if the relationship includes both
+                    reg_no and course_id and there are other attributes, a new
+                    table will be created for them.<br />
+
+                    That's the story about foreign keys. There are some
+                    ambiguities in the discussion about foreign keys. Read it
+                    and get a simple idea. When you create the database, you
+                    will understand foreign keys properly.
+                </p>
+
+                <p>
+                    When I started talking about foreign keys, I said that
+                    usually a foreign key is not defined in an ER. I will tell
+                    you the reason now…. The database is created by looking at
+                    the ER… The ER is a diagram that we draw to get a rough idea
+                    of ​​it before creating the database.<br />
+                    When drawing the ER, we need to specify the cardinality for
+                    each relationship. According to the cardinality that is set,
+                    we can tell in which table of the database the foreign key
+                    is stored. That is why I told you about how the foreign key
+                    is stored according to the cardinality..<br />
+                    When creating a database, one thing that needs to be taken
+                    care of is the foreign key. Because one table is connected
+                    to the other through these foreign keys.
+                </p>
+
+                <p>
+                    The theory parts necessary to draw an ER
+                    are complete..now you can draw a complete ER. When drawing
+                    an ER
+                    , you can just draw it on a piece of paper…or you can use a
+                    platform like draw.io
+                    .
+                </p>
+
+                <p>
+                    <a href="https://www.drawio.com/" target="_blank"> Draw ER
+                        Diagrams using draw.io</a>
+                </p>
+
+                <p>
+                    Now we have to create the database according to ER.<br>
+
+                    Before creating the database, we need to prepare our machine
+                    as needed. For that, we first need to download MYSQL.
+                </p>
+
+                <p id="relationship">📥 Steps to download ...</p>
+
+                <p>
+                    Search mysql ➡️ Go to the first link in the search results
+                    ➡️ Go to downloads ➡️ Click download now ➡️ Install after
+                    downloading
+                </p>
+
+                <p>
+                    <a href="https://www.mysql.com/downloads/">Download SQL</a>
+                </p>
+
+                <p>
+                    If you have installed MySQL correctly, open cmd/terminal and
+                    try this command. (Command : mysql -u root -p)
+                </p>
+
+                <center><img height="250px" width="550px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770984239/Ss32_akquln.jpg"
+                        alt></center>
+
+                <p>Type mysql -u root -p and then enter the password you
+                    provided.</p>
+
+                <center><img height="205px" width="550px"
+                        src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770984384/Ss33_sq4txt.jpg"
+                        alt></center>
+
+                <p>
+                    If you get a feedback like this after entering the password,
+                    MySQL is installed correctly on your machine. Then keep
+                    MySQL installed…Get ready to build a house according to the
+                    house plan we drew in MySQL Part IV😜
+                </p>
+
+                <div class="summary-box">
+                    <h3>📌 Summary</h3>
+                    <p>
+                        We talked today.,<br>
+                        About Primary key, Foreign Key,<br>
+                        How is a Foreign Key stored in a table?<br>
+                        This is how to install MySQL on your machine.
+                    </p>
+                </div>
+
+                <div class="next-box">
+                    <h3>⏭️ Coming Up Next</h3>
+                    <p>
+                        From the next part,<br>
+                        Let's talk about how to create and work with an About
+                        SQL Database<br>
+                        <i>Read next > MySQL Part 4</i>
+                    </p>
+
+                    <hr>
+                </div>
+
+                <center><p><h3>Thanks for tuning in. Until next time, stay
+                            tech-savvy!</h3></p></center>
+
+            </div>
+
+            <div class="comment-section">
+
+                <h3>💬 Comments</h3>
+                <input type="text" id="name" placeholder="Your Name">
+                <textarea id="comment"
+                    placeholder="Write your comment..."></textarea>
+                <button onclick="addComment()">Post Comment</button>
+                <div id="commentList"></div>
+
+            </div>
+
+        </main>
+
+        <script src="../js/postLang.js"></script>
+        <script src="../js/app.js"></script>
+    </body>
+</html>

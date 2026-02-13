@@ -279,12 +279,12 @@ button {
     line-height: 1.5;
 }
 
-#header1{
+#header1 {
     font-size: 27px;
     color: #e06705;
 }
 
-#title{
+#title {
     font-size: 29px;
     color: #b45609;
 }
@@ -296,7 +296,7 @@ button {
 
 .image-row {
     display: flex;
-    gap: 15px;        
+    gap: 15px;
     justify-content: center;
 }
 
@@ -306,7 +306,7 @@ button {
     object-fit: cover;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
     .image-row {
         flex-direction: column;
     }
@@ -323,7 +323,7 @@ button {
     margin: 25px 0;
     border-radius: 12px;
 
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 .summary-box h3 {
@@ -341,26 +341,27 @@ button {
     border-image: linear-gradient(#ff3c00, #ffcc00) 1;
 }
 
-.next-box{
-  background: rgba(255, 204, 0, 0.12); /* soft yellow */
-  border: 1px dashed rgba(255, 140, 0, 0.6);
-  padding: 18px 22px;
-  margin: 25px 0;
-  border-radius: 12px;
+.next-box {
+    background: rgba(255, 204, 0, 0.12);
+    /* soft yellow */
+    border: 1px dashed rgba(255, 140, 0, 0.6);
+    padding: 18px 22px;
+    margin: 25px 0;
+    border-radius: 12px;
 }
 
-.next-box h3{
-  margin: 0 0 10px 0;
-  color: #ff8c00;
+.next-box h3 {
+    margin: 0 0 10px 0;
+    color: #ff8c00;
 }
 
-.next-box p{
-  line-height: 1.9;
-  font-size: 18px;
-  margin: 0;
+.next-box p {
+    line-height: 1.9;
+    font-size: 18px;
+    margin: 0;
 }
 
-.comment-section{
+.comment-section {
     margin-top: 40px;
     padding: 20px;
     background: var(--card);
@@ -368,7 +369,7 @@ button {
 }
 
 .comment-section input,
-.comment-section textarea{
+.comment-section textarea {
     width: 100%;
     margin-top: 10px;
     padding: 10px;
@@ -376,16 +377,16 @@ button {
     border: 1px solid var(--border);
 }
 
-.comment-section textarea{
+.comment-section textarea {
     height: 100px;
     resize: none;
 }
 
-.comment-section button{
+.comment-section button {
     margin-top: 10px;
 }
 
-.back-btn{
+.back-btn {
     display: inline-block;
     margin-bottom: 20px;
     padding: 6px 14px;
@@ -398,15 +399,13 @@ button {
 
     border-left: 6px solid #ff6b00;
 
-    background: linear-gradient(
-        135deg,
-        rgba(255, 140, 0, 0.08),
-        rgba(255, 80, 0, 0.05)
-    );
+    background: linear-gradient(135deg,
+            rgba(255, 140, 0, 0.08),
+            rgba(255, 80, 0, 0.05));
 
     border-radius: 12px;
 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
 }
 
 .previous-box h3 {
@@ -418,18 +417,24 @@ button {
     line-height: 1.6;
 }
 
-.prev-link{
-    display:inline-block;
-    margin-top:10px;
-    color:#ff6b00;
-    font-weight:bold;
-    text-decoration:none;
+.prev-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #ff6b00;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-.prev-link:hover{
-    text-decoration:underline;
+.prev-link:hover {
+    text-decoration: underline;
 }
 
-#relationship{
+#relationship {
     color: #16c2fc;
 }
+
+#sub-titles {
+    color: #ac1111;
+    font-size: 30px;
+}
+
