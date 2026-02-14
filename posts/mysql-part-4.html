@@ -192,6 +192,12 @@
                         ඒ database එක ඇතුලට යනවා වගේ අදහසක්..
                     </p>
 
+                    <center>
+                        <img height="150px" width="500px"
+                            src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770988926/Ss38_gt6sib.jpg"
+                            alt>
+                    </center>
+
                     <p>
                         හරි, අපි දැන් CREATE DATABASE දීලා අලුත් database එකක්
                         හදාගෙන ඒ database එක use කරලයි තියෙන්නේ. දැන් අපි ඒ
@@ -199,21 +205,630 @@
                         කියලා…(user කියන්නේ ER එකේ එක Entity එකක්)
                     </p>
 
+                    <p id="header1">
+                        (04.) CREATE TABLE &lt;table name&gt; (field 1 datatype
+                        (No of characters)) , (field 2 datatype (No of
+                        characters)) ;
+                    </p>
+
+                    <p>
+                        Eg :- CREATE TABLE user (<b>user_id</b> VARCHAR(15),
+                        <b>name</b>
+                        VARCHAR(50), <b>contact_no</b>
+                        INT(10));
+                    </p>
+
+                    <p>
+                        හරි, මේ command එකේ මම highlight කරලා තියන ඒවා දිහා
+                        බලන්නකො.. ඒ තියෙන්නේ ER Diagram එකේ user කියන entity එකේ
+                        attributes නේද? ඒ කියන්නේ user table එකේ columns…
+                    </p>
+
+                    <p>
+                        මොනවද මේ Varchar, int කියල දාලා තියෙන්නේ? ඒවාට අපි
+                        කියනවා data types කියලා…
+                    </p>
+
+                    <p id="sub-titles"><b>Data Types</b></p>
+
+                    <p>
+                        අපි table එකක column එකක් හදනවා නම් ඒකට data type එකක්
+                        තියෙන්න ඕනි… හිතන්නකො අපි name එකට Saman කියන data එක
+                        insert කරනවා..ඒකෙ තියෙන්නේ letters. contact_no එකට data
+                        insert කරනකොට තියෙන්නේ numbers. ඔයාලට තේරෙනවා ඇති insert
+                        කරන data එක අනුව data type එක වෙනස් වෙනවා..
+                    </p>
+
                     <center>
-                        <img height="150px" width="500px"
-                            src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770988926/Ss38_gt6sib.jpg"
+                        <img height="250px" width="550px"
+                            src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1771071163/Ss39_hwfdvr.jpg"
                             alt>
                     </center>
+
+                    <center>
+                        <p>Resource :<a
+                                href="https://dev.mysql.com/doc/refman/8.4/en/data-types.html">For
+                                more data types</a></p>
+                    </center>
+
+                    <p>
+                        මේවට අමතරව තව data types ගොඩක් තියනවා…ඒවා අපි ඉස්සරහට යන
+                        ගමන් බලමු..මෙතන තියෙන්නේ අපිට වැදගත්ම වෙන data types
+                        ටිකක් විතරයි…
+                    </p>
+
+                    <p>
+                        කලින් table එක create කරන query එකේ name එකට VARCHAR
+                        කියලා දුන්න එක දැන් තේරෙනවනේ…(50) කියලා දීලා තියෙන්නේ
+                        name column එකේ user කෙනෙකුගේ name එකට insert කරන්න
+                        පුළුවන් උපරිම letters ගණන…ඔයාට මේ වරහන් ඇතුලේ දෙන number
+                        එක 255 වෙනකන් අරන් යන්න පුළුවන්…(Varchar data type එකට
+                        විතරයි).
+                    </p>
+
+                    <p>
+                        හරි, දැන් ඔයා දන්නවා 04 වෙනි query එකේ තේරුම මොකක්ද
+                        කියලා…අපි table එකක් හදාගත්තානේ…අපිට පුළුවන් අපි හදපු
+                        table එකේ structure එක මොනවගේද කියලා බලාගන්න…
+                    </p>
+
+                    <p id="header1">(05.) DESCRIBE &lt;table name&gt; ;</p>
+
+                    <p>
+                        Eg :- DESCRIBE user;
+                    </p>
+
+                    <p>
+                        මේ query එකම තවත් විදියකට ලියන්න පුළුවන්…කලින් විදියෙම
+                        short form එකක් වගේ(මේ දෙකෙන්ම කියවෙන්නේ එකක්)
+                    </p>
+
+                    <p>
+                        DESC &lt;table name&gt; ;
+                    </p>
+
+                    <center>
+                        <img height="200px" width="500px"
+                            src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1771072377/Ss40_puvj1l.jpg"
+                            alt>
+                    </center>
+
+                    <p>
+                        මේ table එකේ Field & Type කියන දෙක තේරෙනවා නම් හරි…ඉතුරු
+                        columns වලින් කියවෙන්නේ මොනවද කියල ඉස්සරහට බලමු.table
+                        එකේ ඒ ඒ fields වලට අදාලව අපි කලින් දුන්න data types
+                        විස්තර ඇතුව මේ command එකෙන් බලාගන්න පුළුවන්.
+                    </p>
+
+                    <p>
+                        Table එක නම් ready..දැන් තියෙන්නේ ඒ table එකට data
+                        insert කරන්න..මම කලිනුත් කිව්වනේ table එකක data store
+                        tuples(row) විදියට කියලා…ඒ නිසා data insert කරනකොට එක
+                        row එකකට match වෙන්න තමයි insert කරන්නේ..
+                    </p>
+
+                    <p id="header1">(06.) INSERT INTO &lt;table name&gt; VALUES
+                        ('data 1', 'data 2' , 'data 3');</p>
+
+                    <p>
+                        Eg :- INSERT INTO user VALUES ('U001' , 'Kamal' ,
+                        0123654789);
+                    </p>
+
+                    <center><img height="150px" width="600px"
+                            src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1771072618/Ss41_sesihb.jpg"
+                            alt></center>
+
+                    <p>
+                        ඔයාලට මතක ඇති table එක හදනකොට data type එකත් එක්ක
+                        characters ගානත් දුන්නා…මම දැන් contact_no එකට ඉලක්කම්
+                        12ක් දීලා බලනවා මොකද වෙන්නේ කියලා..
+                    </p>
+
+                    <center><img height="100px" width="500px"
+                            src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1771072727/Ss42_ffcaxw.jpg"
+                            alt></center>
+
+                    <p>
+                        Error එකක් නේද? ඒ කියන්නේ ඒ දුන්න characters ගානෙන්
+                        එලියට යන්න බෑ…දැන් clear නේ…
+                    </p>
+
+                    <p>
+                        අපි මේ වෙනකන් කරපු දේවල් ටිකක් මතක් කරමුකෝ…database එකක්
+                        හදලා, ඒක use කරලා, එකේ user කියලා table එකක් හැදුවා…ඒකට
+                        dataත් insert කලානේ….insert කරලා විතරක් මදිනේ..අපි
+                        insert කරපු data හරි විදියට insert වෙලාද කියලා බලාගන්නත්
+                        ඕනිනේ…
+                    </p>
+
+                    <p id="header1">(07.) SELECT * FROM &lt;table name&gt;;</p>
+
+                    <p>
+                        Eg :- SELECT * FROM user;
+                    </p>
+
+                    <center>
+                        <img height="250px" width="550px"
+                            src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1771072936/Ss43_iuxcns.jpg"
+                            alt>
+                    </center>
+
+                    <p>
+                        ඔන්න අපි insert කරපු data ටික නම් තියනවා…පොඩි පොඩි අවුල්
+                        ටිකක් තියනවා නේද? එකම data එක duplicate වෙලා…අපි ඒවා ගැන
+                        ඉස්සරහට බලමු…<br>
+                        අපි මේ query එක කියවන්නේ SELECT ALL FROM user කියලා… *
+                        symbol එකෙන් අදහස් වෙන්නේ all නැත්නම් everything වගේ
+                        දෙයක්… * symbol එක දැම්මම මුළු table එකම output එක
+                        විදියට ගන්න පුළුවන්…
+                    </p>
+
+                    <p>
+                        හරි, අද අපි SQL වල foundation එක දැම්මා…තවත් part එකකින්
+                        හම්බවෙනකන් මේ queries practice කරන්න🤗
+                    </p>
+
+                    <div class="summary-box">
+                        <h3>📌 Summary</h3>
+                        <p>
+                            අද අපි කතා කලේ,<br>
+                            Database එකක් create කරන විදිය, tables හදන හැටි,<br>
+                            data insert කරන විදිය, data retrieve කරන විදිය,<br>
+                            data types ගැන…
+                        </p>
+                    </div>
+
+                    <div class="next-box">
+                        <h3>⏭️ Coming Up Next</h3>
+                        <p>
+                            Next Part එකෙන්,<br>
+                            data insert කරන අනිත් ක්‍රම,<br>
+                            tables,databases drop කරන විදිය,<br>
+                            columns rename කරන විදිය ගැන කතා කරමු.<br>
+                            <i>Read next > MySQL Part 5</i>
+                        </p>
+
+                        <hr>
+                    </div>
+
+                    <center><p><h3>Thanks for tuning in. Until next time, stay
+                                tech-savvy!</h3></p></center>
 
                 </div>
 
                 <div class="post-content lang-en">
-                    <h1><u>MySQL Part 4</u></h1>
-                    <p>Your English content here…</p>
-                </div>
-            </main>
+                    <h1 id="title"><u>MySQL Part 4</u></h1>
 
-            <script src="../js/postLang.js"></script>
-            <script src="../js/app.js"></script>
-        </body>
-    </html>
+                    <p>
+                        My purpose in writing this blog is to share how to
+                        create a database using MySQL. So if you are interested
+                        in getting into the programming side and want to learn
+                        about MySQL, this article will be very important for
+                        you.
+                    </p>
+
+                    <div class="previous-box">
+                        <h3>📚 From Previous Blog</h3>
+
+                        <p>
+                            In MySQL part III, we talked about Primary key,
+                            Foreign Key,<br>
+                            and how to properly install MySQL on your machine
+                            …If you haven't read MySQL
+                            Part III, go read that too.<br />
+                            <a href="mysql-part-3.html" class="prev-link">
+                                👉 Read MySQL Part III
+                            </a>
+                        </p>
+
+                        <p>
+                            Let's go to today's part...<br />
+                            Today we're talking about SQL Queries.
+                        </p>
+                    </div>
+
+                    <p>
+                        I think you have MySQL installed and are ready
+                        ..Now we are going to get into SQL..From today
+                        we will work with MySQL
+                        in cmd(command prompt)
+                        or
+                        in the terminal…<br>
+                        After opening your terminal/cmd, you will see a UI like
+                        this.
+                    </p>
+
+                    <center><img height="250px" width="550px"
+                            src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770987241/Ss34_ln0x3s.jpg"
+                            alt></center>
+
+                    <p>
+                        This working directory is the default working directory.
+                        We need to change this to SQL. Then the working
+                        directory will change so that we can execute SQL
+                        commands… The command you need to give is, <mysql -u
+                            root -p>
+                            After entering this, a place to enter the password
+                            will appear… After entering the password you gave
+                            when installing MySQL, your working directory will
+                            change like this.
+                        </p>
+
+                        <center><img height="300px" width="600px"
+                                src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770987363/Ss35_nealrk.jpg"
+                                alt></center>
+
+                        <p>
+                            Okay, now you can see a welcome message
+                            and
+                            your previous working directory
+                            has been changed to mysql..now we need to execute
+                            SQL queries
+                            everything
+                            is ready…
+                            Create a database, make changes to the data
+                            using SQL
+                            queries
+                            or commands…<br>
+                            One thing to remember when executing these SQL
+                            queries is to put a semicolon (;) at the end of the
+                            query…
+                        </p>
+
+                        <p id="sub-titles"><b>SQL Commands</b></p>
+
+                        <p id="header1">(01.) SHOW DATABASES;</p>
+
+                        <p>
+                            This is the first query we will learn… With this
+                            command
+                            you can see all the
+                            databases
+                            currently created on your local machine..
+                        </p>
+
+                        <center><img height="350px" width="500px"
+                                src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770987627/Ss36_mt4afr.jpg"
+                                alt></center>
+
+                        <p>
+                            Even if you are a 1st time SQL user, when you give
+                            this command, it will show some databases..they are
+                            the default databases on your computer…
+                            Okay, let’s see what databases are there now…why
+                            are we
+                            looking at that?<br>
+                            *You cannot create two databases with the same name.
+                        </p>
+
+                        <p>
+                            Another thing about the name we give when creating a
+                            database or table is that SQL is not case sensitive.
+                            That means both simple letters and capital letters
+                            are the same for it…If you create a table called
+                            <b><u>S</u></b>tudent, you cannot create another
+                            table called
+                            <b><u>s</u></b>tudent...(<i>S</i>
+                            capital & simple)
+                        </p>
+
+                        <p>
+                            (I am giving these queries in capitals, separating
+                            the key words to make them easier to understand. You
+                            can also give them in simple case if you want.)<br>
+
+                            සරලවම show databases දීලා ඒ එන databases වල නැති
+                            නමකින්
+                            අපේ අලුත් database එක හැදෙන්න ඕනි…දැන් අපි බලමු
+                            database
+                            එකක් හදන command එක මොකක්ද කියලා…
+                        </p>
+
+                        <p id="header1">
+                            (02.) CREATE DATABASE &lt;
+                            database_name&gt;
+                            ;
+                        </p>
+
+                        <p>Eg :- CREATE DATABASE user_management_system;</p>
+
+                        <p>
+                            When giving these commands, I use only one method
+                            You will see in the future… The name I give is
+                            We can write things like database name, table name
+                            There are 3 ways…
+                        </p>
+
+                        <dl>
+                            <dt><b>Snack Case</b></dt>
+                            <dd>In this case, every letter is simple. Also, a
+                                new
+                                word starts with an underscore (_). Most
+                                of us use snake case…I used this
+                                method above…<br>eg :-
+                                user_management_system</dd>
+
+                            <dt>Camal Case</dt>
+                            <dd>
+                                In this case, the first letter is simple. When
+                                starting a new word, the first letter of the
+                                word should be capitalized. There are no spaces
+                                between the words…<br>eg :-
+                                userManagementSystem
+                            </dd>
+
+                            <dt>Pascal Case</dt>
+                            <dd>
+                                This is also like Camel Case. But there is a
+                                small difference..in Pascal Case, the first
+                                letter of every word is capital. Don't confuse
+                                it with Camel Case. In Camel Case, the first
+                                letter of the first word is simple. In this
+                                case, it is also capital.<br>
+                                eg :- UserManagementSystem
+                            </dd>
+                        </dl>
+
+                        <p>So you can also get used to one of these three
+                            methods.
+                            We were talking about how to create a database… When
+                            that query
+                            is executed, this is the feedback that comes
+                            out…</p>
+
+                        <center><img height="200px" width="600px"
+                                src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770988432/Ss37_zbuuj9.jpg"
+                                alt></center>
+
+                        <p id="header1">(03.) USE &lt;database name &gt;;</p>
+
+                        <p>Eg :- USE user_management_system;</p>
+
+                        <p>
+                            This command says that we are using the database
+                            that we created. That means we can work inside the
+                            database and go into that database.
+                        </p>
+
+                        <center>
+                            <img height="150px" width="500px"
+                                src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1770988926/Ss38_gt6sib.jpg"
+                                alt>
+                        </center>
+
+                        <p>
+                            Okay, we have now created a new database
+                            by CREATE DATABASE
+                            and used that database. Now let's see
+                            how to create a table called user in that
+                            database…(user is an Entity in ER)
+                        </p>
+
+                        <p id="header1">
+                            (04.) CREATE TABLE &lt;table name&gt; (field 1
+                            datatype
+                            (No of characters)) , (field 2 datatype (No of
+                            characters)) ;
+                        </p>
+
+                        <p>
+                            Eg :- CREATE TABLE user (<b>user_id</b> VARCHAR(15),
+                            <b>name</b>
+                            VARCHAR(50), <b>contact_no</b>
+                            INT(10));
+                        </p>
+
+                        <p>
+                            Okay, look at the ones I've highlighted in this
+                            command.. Those are the attributes of the user
+                            entity in the ER Diagram, right? That means the
+                            columns in the user table…
+                        </p>
+
+                        <p>
+                            What are these Varchar and int? We call them data
+                            types…
+                        </p>
+
+                        <p id="sub-titles"><b>Data Types</b></p>
+
+                        <p>
+                            If we create a column in a table, it must have a
+                            data type… Imagine we insert the data called Saman
+                            into the name. It contains letters. When we insert
+                            the data into the contact_no, it contains numbers.
+                            You may understand that the data type changes
+                            according to the data that is inserted.
+                        </p>
+
+                        <center>
+                            <img height="250px" width="550px"
+                                src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1771071163/Ss39_hwfdvr.jpg"
+                                alt>
+                        </center>
+
+                        <center>
+                            <p>Resource :<a
+                                    href="https://dev.mysql.com/doc/refman/8.4/en/data-types.html">For
+                                    more data types</a></p>
+                        </center>
+
+                        <p>
+                            In addition to this, there are many more data
+                            types...we will look at them as we go forward..here
+                            are just a few of the most important data types for
+                            us...
+                        </p>
+
+                        <p>
+                            In the previous query to create the table, the name
+                            was given as VARCHAR, which is now understood…(50)
+                            is the maximum number of letters that can be
+                            inserted into a user's name in the name column…You
+                            can take the number given in these brackets up to
+                            255…(only for Varchar data type).
+                        </p>
+
+                        <p>
+                            Okay, now you know what query 04 means… We created a
+                            table… We can see what the structure of the table we
+                            created is…
+                        </p>
+
+                        <p id="header1">(05.) DESCRIBE &lt;table name&gt; ;</p>
+
+                        <p>
+                            Eg :- DESCRIBE user;
+                        </p>
+
+                        <p>
+                            This query can be written in another way…like a
+                            short form of the previous
+                            form.(Both of these are read as one)
+                        </p>
+
+                        <p>
+                            DESC &lt;table name&gt; ;
+                        </p>
+
+                        <center>
+                            <img height="200px" width="500px"
+                                src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1771072377/Ss40_puvj1l.jpg"
+                                alt>
+                        </center>
+
+                        <p>
+                            If you understand the Field & Type in this table,
+                            okay... let's see what the remaining
+                            columns mean.
+                            You can use this command to see the data types
+                            related to each field in the table, along with the
+                            details we gave earlier.
+                        </p>
+
+                        <p>
+                            The table is ready..now we need to insert data into
+                            that table..I have already said that data in a table
+                            is stored as tuples(rows)…so when we insert data, we
+                            insert it to match one row..
+                        </p>
+
+                        <p id="header1">(06.) INSERT INTO &lt;table name&gt;
+                            VALUES
+                            ('data 1', 'data 2' , 'data 3');</p>
+
+                        <p>
+                            Eg :- INSERT INTO user VALUES ('U001' , 'Kamal' ,
+                            0123654789);
+                        </p>
+
+                        <center><img height="150px" width="600px"
+                                src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1771072618/Ss41_sesihb.jpg"
+                                alt></center>
+
+                        <p>
+                            You may remember that when creating the table, I
+                            gave the data type and the number of
+                            characters...I'm now giving 12 digits to the
+                            contact_no and seeing what happens.
+                        </p>
+
+                        <center><img height="100px" width="500px"
+                                src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1771072727/Ss42_ffcaxw.jpg"
+                                alt></center>
+
+                        <p>
+                            Isn't it an error? That means you can't go out with
+                            the number of characters you gave...it's clear
+                            now...
+                        </p>
+
+                        <p>
+                            Let's recall some of the things we've done so far...
+                            We created a database, used it, and created a table
+                            called user in it... We also inserted data into
+                            it... We don't just insert it. We also need to check
+                            whether the data we inserted was inserted
+                            correctly...
+                        </p>
+
+                        <p id="header1">(07.) SELECT * FROM &lt;table
+                            name&gt;;</p>
+
+                        <p>
+                            Eg :- SELECT * FROM user;
+                        </p>
+
+                        <center>
+                            <img height="250px" width="550px"
+                                src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1771072936/Ss43_iuxcns.jpg"
+                                alt>
+                        </center>
+
+                        <p>
+                            Here is the data we inserted… There are some small
+                            mistakes, right? The same data is duplicated… Let's
+                            take a look at them
+                            later…<br>
+                            We call this query SELECT ALL FROM user...
+                            *
+                            The symbol means all or everything… When you put the
+                            * symbol, you can get the entire table as the
+                            output…
+                        </p>
+
+                        <p>
+                            Okay, today we laid the foundation of SQL… Until we
+                            meet again in another part
+
+                            , practice these queries.🤗
+                        </p>
+
+                        <div class="summary-box">
+                            <h3>📌 Summary</h3>
+                            <p>
+                                Today we talked,<br>
+                                How to create a database,<br>
+                                how to create tables,<br>
+                                how to insert data, how to retrieve data, <br>
+                                about data types…
+                            </p>
+                        </div>
+
+                        <div class="next-box">
+                            <h3>⏭️ Coming Up Next</h3>
+                            <p>
+                                From the next part,<br>
+                                Let's talk about other ways to insert data,<br>
+                                how to drop tables and databases,<br>
+                                how to rename columns.<br>
+                                <i>Read next > MySQL Part 5</i>
+                            </p>
+
+                            <hr>
+                        </div>
+
+                        <center><p><h3>Thanks for tuning in. Until next time,
+                                    stay
+                                    tech-savvy!</h3></p></center>
+
+                    </div>
+
+                    <div class="comment-section">
+
+                        <h3>💬 Comments</h3>
+                        <input type="text" id="name" placeholder="Your Name">
+                        <textarea id="comment"
+                            placeholder="Write your comment..."></textarea>
+                        <button onclick="addComment()">Post Comment</button>
+                        <div id="commentList"></div>
+
+                    </div>
+
+                </main>
+
+                <script src="../js/postLang.js"></script>
+                <script src="../js/app.js"></script>
+            </body>
+        </html>

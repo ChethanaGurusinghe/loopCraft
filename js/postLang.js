@@ -1,14 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const lang = localStorage.getItem("lang") || "en";
+function applyLanguage() {
+  const lang = localStorage.getItem("lang") || "en";
 
-    const en = document.querySelectorAll(".lang-en");
-    const si = document.querySelectorAll(".lang-si");
+  document.querySelectorAll(".lang-en").forEach(el => {
+    el.style.display = (lang === "en") ? "block" : "none";
+  });
 
-    if (lang === "si") {
-        en.forEach(el => el.style.display = "none");
-        si.forEach(el => el.style.display = "block");
-    } else {
-        en.forEach(el => el.style.display = "block");
-        si.forEach(el => el.style.display = "none");
-    }
-});
+  document.querySelectorAll(".lang-si").forEach(el => {
+    el.style.display = (lang === "si") ? "block" : "none";
+  });
+}
+
+document.addEventListener("DOMContentLoaded", applyLanguage);
+
+// ✅ runs also when user returns via back button
+window.addEventListener("pageshow", applyLanguage);
