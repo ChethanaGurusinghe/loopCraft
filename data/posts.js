@@ -63,12 +63,12 @@ const posts = {
 
     en: {
       title: "SQL Part 5 - 26 Feb 2026",
-      excerpt: "A primary key is the data that we use to ..."
+      excerpt: "We can insert data into multiple rows with a single insert query..."
     },
 
     si: {
       title: "SQL 5 කොටස - 26 Feb 2026",
-      excerpt: "data set එකක් මොකක් හරි මාධ්‍යක් use කරලා ..."
+      excerpt: "අපිට පුළුවන් එක insert query එකෙන් rows කිහිපයකට data insert කරන්න..."
     }
   }
 };
