@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MySQL Part 5</title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+
+        <header class="topbar">
+            <div class="brand">
+                <img src="../assets/logo.png" class="logo" />
+                <span class="brand-name">LoopCraft</span>
+            </div>
+        </header>
+
+        <main class="container">
+            <a href="../blog.html" class="card-btn back-btn">⬅ View All
+                Blogs</a>
+
+            <div class="post-content lang-si">
+                <h1 id="title"><u>MySQL 5 කොටස</u></h1>
+
+                <p>
+                    මේ blog එක ලියන එකෙන් මගේ purpose එක වෙන්නේ MySql use කරලා
+                    database
+                    එකක් හදාගන්නේ කොහොමද කියන එක ගැන share කරන එක. ඉතින් ඔයා
+                    programming
+                    side එකට enter වෙලා mySQL ගැන දැනගන්න කැමති කෙනෙක් නම් ඔයාට
+                    මේ article
+                    එක ගොඩක් වැදගත් වේවි.
+                </p>
+
+                <div class="previous-box">
+                    <h3>📚 From Previous Blog</h3>
+
+                    <p>
+                        Database එකක් create කරන විදිය, tables හදන හැටි,<br>
+                        data insert කරන විදිය, data retrieve කරන විදිය,<br>
+                        data types ගැන අපි කතා කලා<br>MySQL
+                        Part IV කියෙව්වේ නැත්නම් ඒකත් කියවලම එන්න.<br />
+                        <a href="mysql-part-4.html" class="prev-link">
+                            👉 Read MySQL Part IV
+                        </a>
+                    </p>
+
+                    <p>
+                        අපි යමු අද Part එකට…<br />
+                        data insert කරන අනිත් ක්‍රම,
+                        tables,databases drop කරන විදිය,<br>
+                        columns rename කරන විදිය, Add කරන විදිය ගැන කතා කරමු.
+                    </p>
+                </div>
+
+                <p>
+                    ඔයාලට මතක ඇති Part 4 එකේ 6වෙනි query එක විදියට data insert
+                    part එක ඉගෙන ගත්තා.. ඒක data insert කරන්න පුළුවන් එක විදියක්
+                    විතරයි. කලින් part එකේ කියලා දුන්න විදිය ඇරුනම Insert query
+                    එක ලියන්න පුළුවන් තවත් ක්‍රම දෙකක් තියනවා..<br>
+
+                    අපි කලින් part එකේදී(MySQL Part 4) එක වතාවකට insert කලේ එක
+                    row එකක් විතරයිනේ. හැබැයි අපිට පුළුවන් එක insert query එකෙන්
+                    rows කිහිපයකට data insert කරන්න..කලින් ලියපු query එකේම row
+                    එකෙන් row එකට commas(,) දාලා query එක ලියන්න විතරයි
+                    තියෙන්නේ...
+                </p>
+
+                <p id="header1">
+                    INSERT INTO &lt;table name&gt; VALUES (value1, value2,
+                    value3,...), (value1, value2, value3,...), (value1, value2,
+                    value3,...);
+                </p>
+
+                <p>
+                    Eg :- INSERT INTO user VALUES
+                    ("U003","John",0123968745),("U004","Doe",0719875432),("U005","Jane",0916895742);
+                </p>
+
+                <img class="post-img"
+                    src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1772086183/Ss44_vxw1or.jpg"
+                    alt>
+
+                <p>
+                    හරි, දැන් ඔයාට rows වැඩි ගානකට එකවර data insert කරන්න
+                    පුළුවන්. හැබැයි මෙහෙම උනාම පොඩි ප්‍රශ්නයක් තියනවා. ඔයා
+                    හිතන්න Nimal කියලා user කෙනෙක් ඉන්නවා . එයාට contact_no එකක්
+                    නෑ කියලා. හරිනම් Nimalට අදාලව contact_no කියන column එකේ
+                    data එක හිස්ව තියෙන්න ඕනි. අපි කලින් data insert කරපු විදියට
+                    insert කරලා බලමු එහෙම කරන්න පුලුවන්ද කියලා . contact_no එකක්
+                    නැති නිසා ඒ data එක නොදා query එක ලියනවා.
+                </p>
+
+                <p>
+                    <center>INSERT INTO user VALUES ("U006","Nimal");</center>
+                </p>
+
+                <p>
+                    බලන්නකෝ මොකද වෙන්නේ කියලා....
+                </p>
+
+                <img class="post-img"
+                    src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1772086830/Ss45_jmjbpt.jpg"
+                    alt>
+
+                <p>
+                    අපි insert කරපු row එක table එකේ තියන columns ගානට match
+                    වෙන්නේ නෑ කියලා error msg එකක් ඇවිල්ලා තියනවා. හරිනේ ඉතිං,
+                    අපි එක data එකක් අඩුවෙන් නේ insert කලේ...<br>
+                    මෙන්න මේ වගේ වෙලාවල් වලදී (table එකේ සියලුම columns වලට අදාල
+                    data දන්නේ නැත්නම්) අපි data insert කරන්නේ මොන columns වලට
+                    අදාලවද කියලා කියන්න ඕනි. ඒ කියන්නේ table එකේ මොන මොන columns
+                    වලටද අපි data insert කරන්නේ කියන එක පැහැදිලිව කියන්න ඕනි.
+                </p>
+
+                <center>
+                    <p>
+                        INSERT INTO user (user_id, name) VALUES
+                        ("U006","Nimal");
+                    </p>
+                </center>
+
+                <img class="post-img"
+                    src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1772087384/Ss46_kukmhp.jpg"
+                    alt>
+
+                <p>
+                    user table එකේ user_id and name columns වලට U006, Nimal
+                    values insert කරන්න කියන එක තමයි මේ query එකෙන්
+                    කියන්නේ..contact_no එකට data එකක් insert කලේ නැති නිසා null
+                    කියලා තියනවා..
+                </p>
+
+                <p>
+                    හරි, දැන් ඔයාලට db එකක් හදලා, ඒක ඇතුලේ tables හදලා data
+                    store කරන්න පුළුවන්. හිතන්නකෝ ඔයා හදපු table එකක් ඔයාට අයින්
+                    කරන්න(delete) ඕන උනොත් මොකද කරන්නේ?
+                    ඒකට තියනවා වෙනම query එකක්...
+                </p>
+
+                <p id="header1">
+                    (08.) DROP TABLE &lt;table name&gt;;
+                </p>
+
+                <p>Eg :- DROP TABLE user;</p>
+                <p>මේ query එකෙන් ඔයා හදපු table එකේ data ත් එක්කම table එක
+                    delete වෙනවා.
+                    දැන් SHOW TABLES query එක දීලා බැලුවොත් මේ වගේ output එකක්
+                    තමයි එන්නේ..
+                    (SHOW TABLES; - database එක ඇතුලේ තියන tables මොනවද කියලා
+                    බලාගන්න පුළුවන්)
+                </p>
+
+                <img class="post-img"
+                    src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1772088468/Ss47_nghvof.jpg"
+                    alt>
+
+                <p>
+                    මේකෙදි empty set කියලා එන්නේ මම database එකේ හදලා තිබුනේ
+                    user table එක විතරක් නිසා...user table එක delete කලා කියන්නේ
+                    database එකේ කිසිම table එකක් නැහැ..තවත් table තිබුනා නම්
+                    ඒවා මේ වෙලාවේදී පෙන්නනවා
+                </p>
+
+                <p>
+                    table එක delete කලා වගේම database එකත් delete කරන්න
+                    පුළුවන්...
+                </p>
+
+                <p id="header1">
+                    (09.) DROP DATABASE &lt;database name&gt;;
+                </p>
+
+                <p>
+                    Eg :- DROP DATABASE user_management_system;
+                </p>
+
+                <p>දැන් SHOW DATABASES දීලා අපි delete කරපු database එක හරියටම
+                    delete වෙලාද කියලා බලන්න පුළුවන්...</p>
+
+                <img class="post-img"
+                    src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1772089039/Ss48_jqwypt.jpg"
+                    alt>
+
+                <p>
+                    Table එකක් ගත්තම අපිට ඒ table එකට changes ගොඩක් කරන්න
+                    පුළුවන්. හිතන්නකෝ දැන් ඔයා Employee කියලා table එකක් හදලා
+                    තියනවා. emp_id , name , emp_salary තමයි columns තියෙන්නේ....
+                </p>
+
+                <img class="post-img"
+                    src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1772089953/Ss49_bpqc7n.jpg"
+                    alt>
+
+                <p>
+                    හරි, දැන් ඔයාට මේ table එක හදලා ඉවර වෙලා city කියල අලුතෙන්
+                    column එකක් add කරන්න වෙනවා . කොහොමද අපි ඒක කරන්නේ ?
+                </p>
+
+                <p id="header1">
+                    (10.) ALTER TABLE &lt;table name&gt; ADD COLUMN &lt;column
+                    name&gt;
+                    &lt;data type&gt; &lt;No of characters&gt; ;
+                </p>
+
+                <p>
+                    Eg :- ALTER TABLE employee ADD COLUMN city VARCHAR(30);
+                </p>
+
+                <img class="post-img"
+                    src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1772090747/Ss50_v6vuqf.jpg"
+                    alt>
+
+                <p>
+                    අලුතෙන් column එකක් add කරනවා නම් අලුත් column එක add කරන්නේ
+                    මොන table එකටද, column එකේ නම මොකක්ද, data type එක මොකක්ද,
+                    characters කියක් තියනවද කියන ටික query එකේ තියෙන්න ඕනි...
+                </p>
+
+                <p>
+                    දැනට හදලා තියන column එකක් rename කරන්න උනොත් ?
+                </p>
+
+                <p id="header1">
+                    (11.) ALTER TABLE &lt;table name&gt; RENAME COLUMN &lt;old
+                    column name&gt; TO &lt;new column name&gt;;
+                </p>
+
+                <p>
+                    Eg :- ALTER TABLE employee RENAME COLUMN city TO location;
+                </p>
+
+                <img class="post-img"
+                    src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1772091323/Ss51_hmkwk0.jpg"
+                    alt>
+
+                <p>
+                    අපි මේ query එක ලියනකොට දැනට table එකේ අදාල column එකේ name
+                    එකෙන් ඒක rename වෙන්න ඕන name එකත් කියන දෙකම දාන්න ඕනි...
+                </p>
+
+                <p>
+                    මම අලුතෙන් add කරගත්ත city කියන column එක location කියලා
+                    rename වෙන්න ඕනි නම් මුලින්ම කියන්න ඕනි rename කරන table එකේ
+                    නම මොකක්ද , rename කල යුතු column එකේ දැනට තියන column name
+                    එක මොකක්ද (old name = city) , rename විය යුත්තේ මොන නමින්ද?
+                    (new name = location)
+                </p>
+
+                <p>
+                    Table එකක්, database එකක් delete කරපු විදියටම table එකේ
+                    columns නුත් delete කරන්න පුළුවන්.
+                </p>
+
+                <p id="header1">
+                    (12.) ALTER TABLE &lt;table name&gt; DROP COLUMN &lt;column
+                    name&gt;;
+                </p>
+
+                <p>
+                    Eg :- ALTER TABLE employee DROP COLUMN location ;
+                </p>
+
+                <img class="post-img"
+                    src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1772092051/Ss52_j8urrx.jpg"
+                    alt>
+
+                <p>
+                    Table එකක් ඇතුලේ තියන column එකකට,row එකකට data එකකට මොකක්
+                    හරි change එකක් කරනවා නම් අපි මුලින්ම table එකේ නම කියලා
+                    ඉන්න ඕනි. <br>
+                    අදාල table එකේ නම මොකක්ද , column name එක මොකක්ද කියන එක
+                    query එකේ තියෙන්නේ ඕනි..
+                    (අලුතෙන් add කල city පස්සේ location කියලා rename කලා)
+                </p>
+
+                <p>
+                    හරි, Table එකකට කරන්න පුළුවන් changes ගොඩක් අද අපි කතා
+                    කලා.🤗
+                </p>
+
+                <div class="summary-box">
+                    <h3>📌 Summary</h3>
+                    <p>
+                        අද අපි කතා කලේ,<br>
+                        Data insert කරන ක්‍රම ගැන,Table/database delete කරන
+                        විදිය,<br>
+                        Columns add කරන විදිය & rename කරන විදිය ,<br>
+                        Columns delete කරන විදිය ගැන
+                    </p>
+                </div>
+
+                <div class="next-box">
+                    <h3>⏭️ Coming Up Next</h3>
+                    <p>
+                        Next Part එකෙන්,<br>
+                        Table columns වල data types change කරන විදිය,<br>
+                        Table name rename කරන විදිය & Constraints ගැනගැන කතා
+                        කරමු.<br>
+                        <i>Read next > MySQL Part 6</i>
+                    </p>
+
+                    <hr>
+                </div>
+
+                <center><p><h3>Thanks for tuning in. Until next time, stay
+                            tech-savvy!</h3></p></center>
+
+            </div>
+
+            <div class="post-content lang-en">
+                <h1 id="title"><u>MySQL Part 5</u></h1>
+
+                <p>
+                    My purpose in writing this blog is to share how to create a
+                    database using MySQL. So if you are interested in getting
+                    into the programming side and want to learn about MySQL,
+                    this article will be very important for you.
+                </p>
+
+                <div class="previous-box">
+                    <h3>📚 From Previous Blog</h3>
+
+                    <p>
+                        We talked about how to create a database,<br>
+                        how to insert data, how to retrieve data,<br>
+                        data types<br>MySQL
+                        If you haven't read Part IV, please read that too.<br />
+                        <a href="mysql-part-4.html" class="prev-link">
+                            👉 Read MySQL Part IV
+                        </a>
+                    </p>
+
+                    <p>
+                        Let's go to today's part...<br />
+                        Let's talk about other ways to insert data,
+                        how to drop tables and databases,<br>
+                        how to rename columns, and how to add.
+                    </p>
+                </div>
+
+                <p>
+                    You may remember that in Part 4, we learned the data insert
+                    part as the 6th query. That is only one way to insert data.
+                    Apart from the method taught in the previous part, there are
+                    two other ways to write the Insert query
+                    .<br>
+
+                    In the previous part (MySQL Part 4), we inserted only one
+                    row at a time. But we can insert data into multiple rows
+                    with one insert query..all we have to do is write the query
+                    by separating the rows with commas(,) in the same query we
+                    wrote earlier...
+                </p>
+
+                <p id="header1">
+                    INSERT INTO &lt;table name&gt; VALUES (value1, value2,
+                    value3,...), (value1, value2, value3,...), (value1, value2,
+                    value3,...);
+                </p>
+
+                <p>
+                    Eg :- INSERT INTO user VALUES
+                    ("U003","John",0123968745),("U004","Doe",0719875432),("U005","Jane",0916895742);
+                </p>
+
+                <img class="post-img"
+                    src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1772086183/Ss44_vxw1or.jpg"
+                    alt>
+
+                <p>
+                    Okay, now you can insert data into multiple rows at once.
+                    But there is a small problem when you do this. Suppose there
+                    is a user named Nimal. He does not have a contact_no. Okay,
+                    the data in the column named contact_no for Nimal should be
+                    empty. Let's insert the data as we did before and see if we
+                    can do that. Since there is no contact_no, we write the
+                    query without providing that data.
+                </p>
+
+                <p>
+                    <center>INSERT INTO user VALUES ("U006","Nimal");</center>
+                </p>
+
+                <p>
+                    See what happens....
+                </p>
+
+                <img class="post-img"
+                    src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1772086830/Ss45_jmjbpt.jpg"
+                    alt>
+
+                <p>
+                    An error message has come up saying that the row we inserted
+                    does not match the number of columns in the table. Okay, so
+                    we inserted one less data...<br>
+                    In times like these (if we don't know the data for all the
+                    columns in the table), we need to specify which columns we
+                    are inserting data into. That is, we need to clearly state
+                    which columns in the table we are inserting data into.
+                </p>
+
+                <center>
+                    <p>
+                        INSERT INTO user (user_id, name) VALUES
+                        ("U006","Nimal");
+                    </p>
+                </center>
+
+                <img class="post-img"
+                    src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1772087384/Ss46_kukmhp.jpg"
+                    alt>
+
+                <p>
+                    This query is saying to insert U006, Nimal
+                    values ​​into the user_id and name columns of the user
+                    table.. Since no data was inserted into contact_no, it is
+                    null
+                    ..
+                </p>
+
+                <p>
+                    Okay, now you can create a db, create tables in it and store
+                    data. Imagine if you want to delete a table you created?
+                    There is a separate query for that...
+                </p>
+
+                <p id="header1">
+                    (08.) DROP TABLE &lt;table name&gt;;
+                </p>
+
+                <p>Eg :- DROP TABLE user;</p>
+                <p>This query will delete the table along with the data in the
+                    table you created.
+                    Now if you run the SHOW TABLES query, you will get an output
+                    like this.
+                    (SHOW TABLES; - You can see what tables are in the database)
+                </p>
+
+                <img class="post-img"
+                    src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1772088468/Ss47_nghvof.jpg"
+                    alt>
+
+                <p>
+                    In this case, it says empty set because I only created the
+                    user table in the database...deleting the user table means
+                    that there are no tables in the database. If there were
+                    other tables, they would be shown at this time.
+                </p>
+
+                <p>
+                    You can delete the database just as you deleted the table...
+                </p>
+
+                <p id="header1">
+                    (09.) DROP DATABASE &lt;database name&gt;;
+                </p>
+
+                <p>
+                    Eg :- DROP DATABASE user_management_system;
+                </p>
+
+                <p>Now we can check if the database we deleted was actually
+                    deleted by using SHOW DATABASES...</p>
+
+                <img class="post-img"
+                    src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1772089039/Ss48_jqwypt.jpg"
+                    alt>
+
+                <p>
+                    Once we have a table, we can make many changes to that
+                    table. Imagine that you have created a table called
+                    Employee. The columns are emp_id , name , emp_salary....
+                </p>
+
+                <img class="post-img"
+                    src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1772089953/Ss49_bpqc7n.jpg"
+                    alt>
+
+                <p>
+                    Okay, now that you've created this table, you need to add a
+                    new column called city. How do we do that?
+                </p>
+
+                <p id="header1">
+                    (10.) ALTER TABLE &lt;table name&gt; ADD COLUMN &lt;column
+                    name&gt;
+                    &lt;data type&gt; &lt;No of characters&gt; ;
+                </p>
+
+                <p>
+                    Eg :- ALTER TABLE employee ADD COLUMN city VARCHAR(30);
+                </p>
+
+                <img class="post-img"
+                    src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1772090747/Ss50_v6vuqf.jpg"
+                    alt>
+
+                <p>
+                    If you are adding a new column, the query should include
+                    information such as which table the new column is being
+                    added to, what the column name is, what the data type is,
+                    and how many characters it has...
+                </p>
+
+                <p>
+                    What if I need to rename an existing column?
+                </p>
+
+                <p id="header1">
+                    (11.) ALTER TABLE &lt;table name&gt; RENAME COLUMN &lt;old
+                    column name&gt; TO &lt;new column name&gt;;
+                </p>
+
+                <p>
+                    Eg :- ALTER TABLE employee RENAME COLUMN city TO location;
+                </p>
+
+                <img class="post-img"
+                    src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1772091323/Ss51_hmkwk0.jpg"
+                    alt>
+
+                <p>
+                    When we write this query, we need to put both the name and
+                    the name that we want to rename from the current column name
+                    in the table...
+                </p>
+
+                <p>
+                    If I want to rename the newly added column called city to
+                    location, I first need to tell you what is the name of the
+                    table to be renamed, what is the current column name of the
+                    column to be renamed (old name = city), and what name should
+                    it be renamed to? (new name = location)
+                </p>
+
+                <p>
+                    Just like deleting a table or database, you can also delete
+                    columns in a table.
+                </p>
+
+                <p id="header1">
+                    (12.) ALTER TABLE &lt;table name&gt; DROP COLUMN &lt;column
+                    name&gt;;
+                </p>
+
+                <p>
+                    Eg :- ALTER TABLE employee DROP COLUMN location ;
+                </p>
+
+                <img class="post-img"
+                    src="https://res.cloudinary.com/dy07nxsrf/image/upload/v1772092051/Ss52_j8urrx.jpg"
+                    alt>
+
+                <p>
+                    If we want to make any changes to a column, row, or data
+                    within a table, we must first know the name of the table.
+                    <br>
+                    What is the name of the relevant table and what is the
+                    column name
+                    It is in the query..
+                    (Renamed location after the newly added city)
+                </p>
+
+                <p>
+                    Okay, today we talked about a lot of changes that can be
+                    made to a table.🤗
+                </p>
+
+                <div class="summary-box">
+                    <h3>📌 Summary</h3>
+                    <p>
+                        Today we talked,<br>
+                        About data insertion methods,How to delete a table/database,<br>
+                        How to add & rename columns,<br>
+                        How to delete columns
+                    </p>
+                </div>
+
+                <div class="next-box">
+                    <h3>⏭️ Coming Up Next</h3>
+                    <p>
+                        From the next part,<br>
+                        Let's talk about how to change the data types of table columns,<br>
+                        rename the table name & Constraints.<br>
+                        <i>Read next > MySQL Part 6</i>
+                    </p>
+
+                    <hr>
+                </div>
+
+                <center><p><h3>Thanks for tuning in. Until next time, stay
+                            tech-savvy!</h3></p></center>
+
+            </div>
+
+            <div class="comment-section">
+
+                <h3>💬 Comments</h3>
+                <input type="text" id="name" placeholder="Your Name">
+                <textarea id="comment"
+                    placeholder="Write your comment..."></textarea>
+                <button onclick="addComment()">Post Comment</button>
+                <div id="commentList"></div>
+
+            </div>
+
+        </main>
+        <script src="../js/postLang.js"></script>
+        <script src="../js/app.js"></script>
+    </body>
+</html>

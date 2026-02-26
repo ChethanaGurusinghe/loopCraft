@@ -56,5 +56,19 @@ const posts = {
       title: "SQL 4 කොටස - 24 Jan 2026",
       excerpt: "data set එකක් මොකක් හරි මාධ්‍යක් use කරලා ..."
     }
+  },
+  5: {
+    image: "https://res.cloudinary.com/dy07nxsrf/image/upload/v1772083846/Gemini_Generated_Image_k0hj9wk0hj9wk0hj_n8wt7e.png",
+    file: "posts/mysql-part-5.html",
+
+    en: {
+      title: "SQL Part 5 - 26 Feb 2026",
+      excerpt: "A primary key is the data that we use to ..."
+    },
+
+    si: {
+      title: "SQL 5 කොටස - 26 Feb 2026",
+      excerpt: "data set එකක් මොකක් හරි මාධ්‍යක් use කරලා ..."
+    }
   }
 };
